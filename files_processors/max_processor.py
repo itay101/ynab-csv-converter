@@ -20,7 +20,11 @@ class MaxProcessor(RawExcelFile):
 
     def _get_body_rows(self):
         rows = []
-        for df in self._raw_data:
+        excel_file = pandas.ExcelFile(self._file_path)
+        for index, df in enumerate(self._raw_data):
+            if self._should_skip_sheet(excel_file, index):
+                continue
+
             df.dropna()
             for row in df.values:
                 if self._should_skip_row(row):
@@ -45,7 +49,9 @@ class MaxProcessor(RawExcelFile):
             return True
         return False
 
+    def _should_skip_sheet(self, excel_file, sheet_index):
+        return excel_file.sheet_names[sheet_index] == "עסקאות שאושרו וטרם נקלטו"
+
     def _is_date(self, test_string):
         pattern = '^\d{2}-\d{2}-\d{4}$'
         return re.match(pattern, test_string)
-
