@@ -8,9 +8,10 @@ BUDGET_ID = "XXXXX"
 TOKEN = "XXXXX"
 
 FILES = [
-    PoalimProcessor(file_path="example.csv", export_file_path="example.csv"),
-    IsracardProcessor(file_path="example.xls", export_file_path="example.csv"),
-    MaxProcessor(file_path="example.xlsx", export_file_path="example.csv")
+    PoalimProcessor(file_path="XXXX.xlsx", export_file_path="XXXX.csv", account_id="XXXXX"),
+    IsracardProcessor(file_path="XXXX.xlsx", export_file_path="XXXX.csv", account_id="XXXXX"),
+    MaxProcessor(file_path="XXXX.xlsx", export_file_path="XXXX.csv", account_id="XXXXX"),
+    MaxProcessor(file_path="XXXX.xlsx", export_file_path="XXXX.csv", account_id="XXXXX")
 ]
 
 
