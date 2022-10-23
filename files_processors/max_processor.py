@@ -1,3 +1,4 @@
+import datetime
 import re
 
 import pandas
@@ -10,12 +11,18 @@ from files_processors.raw_files import YnabCsvFields
 class MaxProcessor(RawExcelFile):
     def __init__(self, **kwargs):
         super().__init__(**kwargs, header_row_number=3, sheet_name=[0, 1])
-        common_mapping = [
-            HeaderMapItem(source="שם בית עסק", target=YnabCsvFields.PAYEE.value),
-            HeaderMapItem(source="הערות", target=YnabCsvFields.MEMO.value),
-            HeaderMapItem(source="סכום חיוב", target=YnabCsvFields.OUTFLOW.value),
-        ]
-        self._header_mapping = [HeaderMapItem(source="תאריך עסקה", target=YnabCsvFields.DATE.value), *common_mapping]
+        self._header_mapping = [HeaderMapItem(source="תאריך עסקה", target=YnabCsvFields.DATE.value),
+                                HeaderMapItem(source="שם בית עסק", target=YnabCsvFields.PAYEE.value),
+                                HeaderMapItem(source="הערות", target=YnabCsvFields.MEMO.value),
+                                HeaderMapItem(source="סכום חיוב", target=YnabCsvFields.OUTFLOW.value), ]
+
+        self._json_mapping = {
+            YnabCsvFields.DATE_KEY.value: "תאריך עסקה",
+            YnabCsvFields.PAYEE_KEY.value: "שם בית עסק",
+            YnabCsvFields.MEMO_KEY.value: "הערות",
+            YnabCsvFields.AMOUNT_KEY.value: "סכום חיוב",
+        }
+
         self._body_rows = self._get_body_rows()
 
     def _get_body_rows(self):
@@ -37,11 +44,12 @@ class MaxProcessor(RawExcelFile):
         return row[1] != "" and row[1] != "סך חיוב בש\"ח:"
 
     def _get_main_table_row_object(self, row):
+        day, month, year = row[0].split("-")
         return {
-            self._header_mapping[0].source: row[0],
+            self._header_mapping[0].source: datetime.datetime(int(year), int(month), int(day), 0, 0).strftime('%Y-%m-%d'),
             self._header_mapping[1].source: row[1],
             self._header_mapping[2].source: row[10] if row[10] != "nan" else "",
-            self._header_mapping[3].source: row[7],
+            self._header_mapping[3].source: int(row[7] * -1000),
         }
 
     def _should_skip_row(self, row):

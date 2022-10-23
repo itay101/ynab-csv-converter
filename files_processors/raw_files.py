@@ -15,13 +15,19 @@ class YnabCsvFields(enum.Enum):
     MEMO = "Memo"
     OUTFLOW = "Outflow"
     INFLOW = "Inflow"
+    DATE_KEY = "date"
+    PAYEE_KEY = "payee_name"
+    MEMO_KEY = "memo"
+    AMOUNT_KEY = "amount"
 
 
 class RawFile:
-    def __init__(self, file_path, export_file_path):
+    def __init__(self, file_path, export_file_path, account_id):
         self._file_path = file_path
         self._export_file_path = f"export/{export_file_path}"
+        self._account_id = account_id
         self._header_mapping = []
+        self._json_mapping = {}
         self._body_rows = []
 
     def write_csv_file(self):
@@ -32,6 +38,27 @@ class RawFile:
             for row in self._body_rows:
                 writer.writerow([row[column_map_item.source] for column_map_item in self._header_mapping])
         file.close()
+
+    def get_transactions(self):
+        transactions = []
+        for row in self._body_rows:
+            transactions.append(self._get_json(row))
+        return transactions
+
+    def _get_json(self, row):
+        amount = row[self._json_mapping[YnabCsvFields.AMOUNT_KEY.value]]
+        date = row[self._json_mapping[YnabCsvFields.DATE_KEY.value]]
+        return {
+            "account_id": self._account_id,
+            "date": date,
+            "amount": amount,
+            "payee_name": row[self._json_mapping[YnabCsvFields.PAYEE_KEY.value]],
+            "memo": row[self._json_mapping[YnabCsvFields.MEMO_KEY.value]],
+            "import_id": f"YNAB:{amount}:{date}:1",
+            "cleared": "cleared",
+            "approved": False,
+
+        }
 
 
 class RawExcelFile(RawFile):
