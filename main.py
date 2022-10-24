@@ -1,25 +1,26 @@
+import json
+
 import requests as requests
 
-from files_processors.isracard_processor import IsracardProcessor
-from files_processors.max_processor import MaxProcessor
-from files_processors.poalim_processor import PoalimProcessor
+from enums import AccountTypeToProcessor
 
-BUDGET_ID = "XXXXX"
-TOKEN = "XXXXX"
-
-FILES = [
-    PoalimProcessor(file_path="XXXX.xlsx", export_file_path="XXXX.csv", account_id="XXXXX"),
-    IsracardProcessor(file_path="XXXX.xlsx", export_file_path="XXXX.csv", account_id="XXXXX"),
-    MaxProcessor(file_path="XXXX.xlsx", export_file_path="XXXX.csv", account_id="XXXXX"),
-    MaxProcessor(file_path="XXXX.xlsx", export_file_path="XXXX.csv", account_id="XXXXX")
-]
-
+CONFIG_FILE_PATH = "config.json"
 
 def process_files():
+    file = open(CONFIG_FILE_PATH)
+    data = json.load(file)
+    token = data["token"]
+    budget_id = data["budget_id"]
+    accounts = data["accounts"]
     transactions = []
-    for file in FILES:
-        transactions = [*transactions, *file.get_transactions()]
-    response = requests.post(f"https://api.youneedabudget.com/v1/budgets/{BUDGET_ID}/transactions", headers={"Authorization": f"Bearer {TOKEN}"},
+    for account in accounts:
+        processor = AccountTypeToProcessor().get_processor_by_type(account["type"])
+        account_id = account["account_id"]
+        file_path = account["file_path"]
+        export_file_path = account["export_file_path"]
+        file_processor = processor(file_path=file_path, export_file_path=export_file_path, account_id=account_id)
+        transactions = [*transactions, *file_processor.get_transactions()]
+    response = requests.post(f"https://api.youneedabudget.com/v1/budgets/{budget_id}/transactions", headers={"Authorization": f"Bearer {token}"},
                              json={"transactions": transactions})
 
     print("Status Code", response.status_code)
