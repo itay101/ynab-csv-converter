@@ -1,4 +1,5 @@
 import csv
+import datetime
 import enum
 import os
 import numpy as np
@@ -59,6 +60,15 @@ class RawFile:
             "approved": False,
 
         }
+
+    def _get_ynab_date(self, year, month, day):
+        return datetime.datetime(int(year), int(month), int(day), 0, 0).strftime('%Y-%m-%d')
+
+    def _get_ynab_amount(self, value, outflow=True):
+        amount = int(value * 1000)
+        if outflow:
+            return amount * -1
+        return amount
 
 
 class RawExcelFile(RawFile):

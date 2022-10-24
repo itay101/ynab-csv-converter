@@ -47,10 +47,10 @@ class MaxProcessor(RawExcelFile):
     def _get_main_table_row_object(self, row):
         day, month, year = row[0].split("-")
         return {
-            self._header_mapping[0].source: datetime.datetime(int(year), int(month), int(day), 0, 0).strftime('%Y-%m-%d'),
+            self._header_mapping[0].source: self._get_ynab_date(day, month, year),
             self._header_mapping[1].source: row[1],
-            self._header_mapping[2].source: row[10] if row[10] != "nan" else "",
-            self._header_mapping[3].source: int(row[5] * -1000),
+            self._header_mapping[2].source: row[10],
+            self._header_mapping[3].source: self._get_ynab_amount(row[5]),
         }
 
     def _should_skip_row(self, row):
