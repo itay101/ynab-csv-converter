@@ -69,13 +69,13 @@ class RawExcelFile(RawFile):
         self._raw_data = self._get_file_raw_data()
 
     def _get_file_raw_data(self):
+        excel_file = pandas.ExcelFile(self._file_path)
+
         if self._sheet_name:
-            dfs = [pandas.read_excel(self._file_path, header=self._header_row_number, sheet_name=[sheet])
-                      for sheet in self._sheet_name]
-            sheets = []
-            for sheet in dfs:
-                for _key, df in sheet.items():
-                    sheets.append(df.replace(np.nan, '', regex=True))
+            dfs = pandas.read_excel(self._file_path, header=self._header_row_number, sheet_name=excel_file.sheet_names)
+            sheets = {}
+            for key, sheet in dfs.items():
+                sheets[key] = sheet.replace(np.nan, '', regex=True)
             return sheets
         df = pandas.read_excel(self._file_path, header=self._header_row_number, sheet_name=self._sheet_name)
         df2 = df.replace(np.nan, '', regex=True)

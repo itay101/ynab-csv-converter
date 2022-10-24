@@ -28,7 +28,8 @@ class MaxProcessor(RawExcelFile):
     def _get_body_rows(self):
         rows = []
         excel_file = pandas.ExcelFile(self._file_path)
-        for index, df in enumerate(self._raw_data):
+        for index, data in enumerate(self._raw_data.items()):
+            _, df = data
             if self._should_skip_sheet(excel_file, index):
                 continue
 
@@ -49,7 +50,7 @@ class MaxProcessor(RawExcelFile):
             self._header_mapping[0].source: datetime.datetime(int(year), int(month), int(day), 0, 0).strftime('%Y-%m-%d'),
             self._header_mapping[1].source: row[1],
             self._header_mapping[2].source: row[10] if row[10] != "nan" else "",
-            self._header_mapping[3].source: int(row[7] * -1000),
+            self._header_mapping[3].source: int(row[5] * -1000),
         }
 
     def _should_skip_row(self, row):
