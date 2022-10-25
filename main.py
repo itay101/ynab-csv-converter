@@ -1,13 +1,9 @@
 import json
 
-import requests as requests
-
+from common.utils import ynab_api
 from enums import AccountTypeToProcessor
 
 CONFIG_FILE_PATH = "config.json"
-BASE_URL = "https://api.youneedabudget.com/v1"
-BUDGETS_URL = f"{BASE_URL}/budgets/"
-
 
 def process_files():
     file = open(CONFIG_FILE_PATH)
@@ -15,7 +11,6 @@ def process_files():
     token = data["token"]
     budget_id = data["budget_id"]
     accounts = data["accounts"]
-    transactions_url = f"{BUDGETS_URL}{budget_id}/transactions"
     transactions = []
     for account in accounts:
         processor = AccountTypeToProcessor().get_processor_by_type(account["type"])
@@ -24,11 +19,7 @@ def process_files():
         export_file_path = account["export_file_path"]
         file_processor = processor(file_path=file_path, export_file_path=export_file_path, account_id=account_id)
         transactions = [*transactions, *file_processor.get_transactions()]
-    response = requests.post(transactions_url, headers={"Authorization": f"Bearer {token}"},
-                             json={"transactions": transactions})
-
-    print("Status Code", response.status_code)
-    print("JSON Response ", response.json())
+    ynab_api.create_transactions(token, budget_id, transactions)
 
 
 if __name__ == '__main__':
