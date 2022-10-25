@@ -1,0 +1,12 @@
+{
+  "token": "XXX",
+  "budget_id": "XXXX",
+  "accounts": [
+    {
+      "account_id": "XXX",
+      "type": "from AccountTypes",
+      "file_path": "XXXXX",
+      "export_file_path": "XXXXX"
+    }
+  ]
+}
