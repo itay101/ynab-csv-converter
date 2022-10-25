@@ -40,11 +40,23 @@ class RawFile:
                 writer.writerow([row[column_map_item.source] for column_map_item in self._header_mapping])
         file.close()
 
+    def split_date(self, value):
+        return value.split("/")
+
     def get_transactions(self):
         transactions = []
         for row in self._body_rows:
             transactions.append(self._get_json(row))
         return transactions
+
+    def get_ynab_date(self, year, month, day):
+        return datetime.datetime(int(year), int(month), int(day), 0, 0).strftime('%Y-%m-%d')
+
+    def get_ynab_amount(self, value, outflow=True):
+        amount = int(value * 1000)
+        if outflow:
+            return amount * -1
+        return amount
 
     def _get_json(self, row):
         amount = row[self._json_mapping[YnabCsvFields.AMOUNT_KEY.value]]
@@ -60,15 +72,6 @@ class RawFile:
             "approved": False,
 
         }
-
-    def _get_ynab_date(self, year, month, day):
-        return datetime.datetime(int(year), int(month), int(day), 0, 0).strftime('%Y-%m-%d')
-
-    def _get_ynab_amount(self, value, outflow=True):
-        amount = int(value * 1000)
-        if outflow:
-            return amount * -1
-        return amount
 
 
 class RawExcelFile(RawFile):
@@ -102,3 +105,22 @@ class RawCSVFile(RawFile):
             lines = file.read().splitlines()
             reader = csv.DictReader(lines)
             return reader.fieldnames, list(reader)
+
+
+class RawHTMLFile(RawFile):
+    def __init__(self, skip_row_number, **kwargs):
+        super().__init__(**kwargs)
+        self._skip_row_number = skip_row_number
+        self._raw_data = self._get_file_raw_data()
+
+    def _get_file_raw_data(self):
+        rows = []
+        data = pandas.read_html(self._file_path,
+                                skiprows=self._skip_row_number,
+                                encoding='utf-8',
+                                keep_default_na=False)
+        for d in data[0].values:
+            if d[0] == '':
+                break
+            rows.append(d)
+        return rows
