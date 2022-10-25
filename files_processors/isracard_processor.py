@@ -45,27 +45,24 @@ class IsracardProcessor(RawExcelFile):
         return row[0] == "עסקאות בחו˝ל"
 
     def _get_main_table_row_object(self, row):
-        day, month, year = self._split_date(row[0])
+        day, month, year = self.split_date(row[0])
         return {
-            self._header_mapping[0].source: self._get_ynab_date(year, month, day),
+            self._header_mapping[0].source: self.get_ynab_date(year, month, day),
             self._header_mapping[1].source: row[1],
             self._header_mapping[2].source: row[7],
-            self._header_mapping[3].source: self._get_ynab_amount(row[4]),
+            self._header_mapping[3].source: self.get_ynab_amount(row[4]),
         }
 
     def _get_secondary_table_row_object(self, row):
-        day, month, year = self._split_date(row[1])
+        day, month, year = self.split_date(row[1])
         return {
-            self._header_mapping[0].source: self._get_ynab_date(year, month, day),
+            self._header_mapping[0].source: self.get_ynab_date(year, month, day),
             self._header_mapping[1].source: row[2],
             self._header_mapping[2].source: row[7],
-            self._header_mapping[3].source: self._get_ynab_amount(row[5]),
+            self._header_mapping[3].source: self.get_ynab_amount(row[5]),
         }
 
     def _should_skip_row(self, row):
         if not row[0] or row[0] == "תאריך רכישה" or row[0] == "עסקאות בחו˝ל":
             return True
         return False
-
-    def _split_date(self, value):
-        return value.split("/")
