@@ -12,13 +12,19 @@ def process_files():
     budget_id = data["budget_id"]
     accounts = data["accounts"]
     transactions = []
+    files_added = []
     for account in accounts:
         processor = AccountTypeToProcessor().get_processor_by_type(account["type"])
         account_id = account["account_id"]
         file_path = account["file_path"]
         export_file_path = account["export_file_path"]
-        file_processor = processor(file_path=file_path, export_file_path=export_file_path, account_id=account_id)
-        transactions = [*transactions, *file_processor.get_transactions()]
+        try:
+            file_processor = processor(file_path=file_path, export_file_path=export_file_path, account_id=account_id)
+            transactions = [*transactions, *file_processor.get_transactions()]
+            files_added.append(file_path)
+        except FileNotFoundError as e:
+            print(f"{e.strerror}: {e.filename} ")
+
     ynab_api.create_transactions(token, budget_id, transactions)
 
 
