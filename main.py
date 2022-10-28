@@ -36,20 +36,16 @@ def process_files():
 
 def _get_transactions_from_file(accounts, f, filename):
     for processor in AccountTypeToProcessor().get_processors():
-        try:
-            identifier = processor.identify_account(f)
-            if identifier:
-                config = config_api.get_account_config_by_identifier(accounts, identifier)
-                if not config:
-                    continue
-                try:
-                    file_processor = processor(file_path=filename, account_id=config["account_id"])
-                    return file_processor.get_transactions()
-                except FileNotFoundError as e:
-                    print(f"{e.strerror}: {e.filename} ")
-        except Exception as e:
-            continue
-
+        identifier = processor.identify_account(f, accounts)
+        if identifier:
+            config = config_api.get_account_config_by_identifier(accounts, identifier)
+            if not config:
+                continue
+            try:
+                file_processor = processor(file_path=filename, account_id=config["account_id"])
+                return file_processor.get_transactions()
+            except FileNotFoundError as e:
+                print(f"{e.strerror}: {e.filename} ")
     return []
 
 

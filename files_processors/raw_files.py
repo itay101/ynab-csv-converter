@@ -46,8 +46,9 @@ class RawFile:
             transactions.append(self._get_json(row))
         return transactions
 
-    def _get_account_identifier(self):
-        return ""
+    @staticmethod
+    def identify_account(file, accounts=None):
+        return
 
     def _get_json(self, row):
         amount = row[self._json_mapping[YnabCsvFields.AMOUNT_KEY.value]]

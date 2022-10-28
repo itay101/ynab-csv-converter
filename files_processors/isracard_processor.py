@@ -1,3 +1,6 @@
+import pandas
+
+import enums as enums
 from files_processors.raw_files import HeaderMapItem
 from files_processors.raw_files import RawExcelFile
 from files_processors.raw_files import YnabCsvFields
@@ -21,6 +24,17 @@ class IsracardProcessor(RawExcelFile):
         self._secondary_header_mapping = [HeaderMapItem(source="תאריך חיוב", target=YnabCsvFields.DATE.value),
                                           *common_mapping]
         self._body_rows = self._get_body_rows()
+
+    @staticmethod
+    def identify_account(file, accounts=None):
+        for account in accounts:
+            if account["type"] != enums.AccountTypes.ISRACARD.value:
+                continue
+            df = pandas.read_excel(file.name)
+            account_identifier_cell_value = df.values[2][0]
+            account_identifier = account_identifier_cell_value.split(" - ")[1]
+            return account_identifier
+        return None
 
     def _get_body_rows(self):
         rows = []
