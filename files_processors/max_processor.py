@@ -3,6 +3,7 @@ import re
 
 import pandas
 
+import enums as enums
 from files_processors.raw_files import HeaderMapItem
 from files_processors.raw_files import RawExcelFile
 from files_processors.raw_files import YnabCsvFields
@@ -24,6 +25,18 @@ class MaxProcessor(RawExcelFile):
         }
 
         self._body_rows = self._get_body_rows()
+
+    @staticmethod
+    def identify_account(file, accounts=None):
+        for account in accounts:
+            if account["type"] != enums.AccountTypes.MAX.value:
+                continue
+            try:
+                df = pandas.read_excel(file.name, engine='openpyxl')
+                account_identifier_cell_value = df.values[0][0]
+                return account_identifier_cell_value[0:4]
+            except IndexError as e:
+                continue
 
     def _get_body_rows(self):
         rows = []
