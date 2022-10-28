@@ -5,7 +5,7 @@ import os
 import numpy as np
 from collections import namedtuple
 
-import pandas as pandas
+import pandas
 
 HeaderMapItem = namedtuple("HeaderMapItem", ["source", "target"])
 
@@ -23,7 +23,7 @@ class YnabCsvFields(enum.Enum):
 
 
 class RawFile:
-    def __init__(self, file_path, export_file_path, account_id):
+    def __init__(self, file_path="", export_file_path="", account_id=""):
         self._file_path = file_path
         self._export_file_path = f"export/{export_file_path}"
         self._account_id = account_id
@@ -45,6 +45,9 @@ class RawFile:
         for row in self._body_rows:
             transactions.append(self._get_json(row))
         return transactions
+
+    def _get_account_identifier(self):
+        return ""
 
     def _get_json(self, row):
         amount = row[self._json_mapping[YnabCsvFields.AMOUNT_KEY.value]]

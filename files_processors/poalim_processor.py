@@ -26,11 +26,17 @@ class PoalimProcessor(RawCSVFile):
 
         self._body_rows = self._get_body_rows()
 
+    @staticmethod
+    def identify_account(file):
+        if file.name.startswith("shekel"):
+            return "poalim"
+        return None
+
     def _get_body_rows(self):
         return [self._get_row_object(row) for row in self._body_rows]
 
     def _get_row_object(self, row):
-        year, month, day = self._split_date(row[self._json_mapping[YnabCsvFields.DATE_KEY.value].replace("\ufeff", "")])
+        year, month, day = self._split_date(row[self._json_mapping[YnabCsvFields.DATE_KEY.value]])
         outflow = row[OUTFLOW_KEY]
         inflow = row[INFLOW_KEY]
         return {

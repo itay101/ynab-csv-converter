@@ -1,31 +1,56 @@
 import json
+import os
 
 from common.utils import ynab_api
+from common.utils import config_api
 from enums import AccountTypeToProcessor
+from enums import AccountTypes
+from files_processors.raw_files import RawCSVFile
 
 CONFIG_FILE_PATH = "config.json"
 
+
 def process_files():
-    file = open(CONFIG_FILE_PATH)
-    data = json.load(file)
-    token = data["token"]
-    budget_id = data["budget_id"]
-    accounts = data["accounts"]
+    config_file = open(CONFIG_FILE_PATH)
+    config_data = json.load(config_file)
+    accounts = config_data["accounts"]
     transactions = []
     files_added = []
-    for account in accounts:
-        processor = AccountTypeToProcessor().get_processor_by_type(account["type"])
-        account_id = account["account_id"]
-        file_path = account["file_path"]
-        export_file_path = account["export_file_path"]
-        try:
-            file_processor = processor(file_path=file_path, export_file_path=export_file_path, account_id=account_id)
-            transactions = [*transactions, *file_processor.get_transactions()]
-            files_added.append(file_path)
-        except FileNotFoundError as e:
-            print(f"{e.strerror}: {e.filename} ")
+    for _root, _dirs, files in os.walk("./"):
+        for filename in files:
+            if (
+                    filename.endswith(".csv") or
+                    filename.endswith(".xls") or
+                    filename.endswith(".xlsx")
+            ):
+                f = open(filename, 'r')
+                transactions = [*transactions, *_get_transactions_from_file(accounts, f, filename)]
+                files_added.append(filename)
+                f.close()
+                os.remove(filename)
+    if transactions:
+        token = config_data["token"]
+        budget_id = config_data["budget_id"]
+        ynab_api.create_transactions(token, budget_id, transactions)
 
-    ynab_api.create_transactions(token, budget_id, transactions)
+
+def _get_transactions_from_file(accounts, f, filename):
+    for processor in AccountTypeToProcessor().get_processors():
+        try:
+            identifier = processor.identify_account(f)
+            if identifier:
+                config = config_api.get_account_config_by_identifier(accounts, identifier)
+                if not config:
+                    continue
+                try:
+                    file_processor = processor(file_path=filename, account_id=config["account_id"])
+                    return file_processor.get_transactions()
+                except FileNotFoundError as e:
+                    print(f"{e.strerror}: {e.filename} ")
+        except Exception as e:
+            continue
+
+    return []
 
 
 if __name__ == '__main__':

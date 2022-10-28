@@ -21,3 +21,6 @@ class AccountTypeToProcessor:
 
     def get_processor_by_type(self, account_type):
         return self._account_type_to_processor.get(account_type)
+
+    def get_processors(self):
+        return self._account_type_to_processor.values()
