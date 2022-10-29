@@ -8,6 +8,7 @@ from enums import AccountTypes
 from files_processors.raw_files import RawCSVFile
 
 CONFIG_FILE_PATH = "config.json"
+VALID_EXTENSIONS = (".csv", ".xls", ".xlsx")
 
 
 def process_files():
@@ -18,11 +19,7 @@ def process_files():
     files_added = []
     for _root, _dirs, files in os.walk("./"):
         for filename in files:
-            if (
-                    filename.endswith(".csv") or
-                    filename.endswith(".xls") or
-                    filename.endswith(".xlsx")
-            ):
+            if filename.endswith(VALID_EXTENSIONS):
                 f = open(filename, 'r')
                 transactions = [*transactions, *_get_transactions_from_file(accounts, f, filename)]
                 files_added.append(filename)
@@ -36,7 +33,7 @@ def process_files():
 
 def _get_transactions_from_file(accounts, f, filename):
     for processor in AccountTypeToProcessor().get_processors():
-        identifier = processor.identify_account(f, accounts)
+        identifier = processor.identify_account(f)
         if identifier:
             config = config_api.get_account_config_by_identifier(accounts, identifier)
             if not config:
@@ -46,6 +43,7 @@ def _get_transactions_from_file(accounts, f, filename):
                 return file_processor.get_transactions()
             except FileNotFoundError as e:
                 print(f"{e.strerror}: {e.filename} ")
+
     return []
 
 
