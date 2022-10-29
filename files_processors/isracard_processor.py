@@ -26,7 +26,7 @@ class IsracardProcessor(RawExcelFile):
         self._body_rows = self._get_body_rows()
 
     @staticmethod
-    def identify_account(file, accounts=None):
+    def identify_account(file, accounts=[]):
         for account in accounts:
             if account["type"] != enums.AccountTypes.ISRACARD.value:
                 continue

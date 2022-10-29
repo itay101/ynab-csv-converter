@@ -47,7 +47,7 @@ class RawFile:
         return transactions
 
     @staticmethod
-    def identify_account(file, accounts=None):
+    def identify_account(file, accounts=[]):
         return
 
     def _get_json(self, row):
