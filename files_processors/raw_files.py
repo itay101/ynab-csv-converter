@@ -46,6 +46,10 @@ class RawFile:
             transactions.append(self._get_json(row))
         return transactions
 
+    @staticmethod
+    def identify_account(self, file=None):
+        return ""
+
     def _get_account_identifier(self):
         return ""
 
