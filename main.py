@@ -10,6 +10,7 @@ from files_processors.raw_files import RawCSVFile
 CONFIG_FILE_PATH = "config.json"
 VALID_EXTENSIONS = (".csv", ".xls", ".xlsx")
 
+
 def process_files():
     config_file = open(CONFIG_FILE_PATH)
     config_data = json.load(config_file)
@@ -21,8 +22,8 @@ def process_files():
             if filename.endswith(VALID_EXTENSIONS):
                 f = open(filename, 'r')
                 transactions = [*transactions, *_get_transactions_from_file(accounts, f, filename)]
-                files_added.append(filename)
                 f.close()
+                files_added.append(filename)
                 os.remove(filename)
     if transactions:
         token = config_data["token"]
@@ -32,7 +33,7 @@ def process_files():
 
 def _get_transactions_from_file(accounts, f, filename):
     for processor in AccountTypeToProcessor().get_processors():
-        identifier = processor.identify_account(f)
+        identifier = processor.identify_account(f, accounts)
         if identifier:
             config = config_api.get_account_config_by_identifier(accounts, identifier)
             if not config:

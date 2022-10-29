@@ -47,11 +47,8 @@ class RawFile:
         return transactions
 
     @staticmethod
-    def identify_account(self, file=None):
-        return ""
-
-    def _get_account_identifier(self):
-        return ""
+    def identify_account(file, accounts=[]):
+        return
 
     def _get_json(self, row):
         amount = row[self._json_mapping[YnabCsvFields.AMOUNT_KEY.value]]
