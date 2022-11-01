@@ -5,7 +5,7 @@ from common.utils import ynab_api
 from common.utils import config_api
 from enums import AccountTypeToProcessor
 
-CONFIG_FILE_PATH = "config.json"
+CONFIG_FILE_PATH = "~/code/ynab-csv-converter/config.json"
 VALID_EXTENSIONS = (".csv", ".xls", ".xlsx")
 
 
@@ -15,7 +15,7 @@ def process_files():
     accounts = config_data["accounts"]
     transactions = []
     files_added = []
-    for _root, _dirs, files in os.walk("./"):
+    for _root, _dirs, files in os.walk(os.path.expanduser("~/Downloads")):
         for filename in files:
             if filename.endswith(VALID_EXTENSIONS):
                 f = open(filename, 'r')
