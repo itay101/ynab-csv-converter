@@ -28,7 +28,7 @@ class PoalimProcessor(RawCSVFile):
 
     @staticmethod
     def identify_account(file, accounts=[]):
-        if file.name.startswith("shekel"):
+        if "poalim" in file.name:
             return "poalim"
         return None
 

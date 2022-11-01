@@ -18,11 +18,13 @@ def process_files():
     for _root, _dirs, files in os.walk(os.path.expanduser("~/Downloads")):
         for filename in files:
             if filename.endswith(VALID_EXTENSIONS):
-                f = open(filename, 'r')
-                transactions = [*transactions, *_get_transactions_from_file(accounts, f, filename)]
+                f = open(f"{_root}/{filename}", 'r')
+                print("processing:", filename)
+                transactions = [*transactions, *_get_transactions_from_file(accounts, f, f"{_root}/{filename}")]
                 f.close()
                 files_added.append(filename)
-                os.remove(filename)
+                print("removing:", filename)
+                os.remove(f"{_root}/{filename}")
     if transactions:
         token = config_data["token"]
         budget_id = config_data["budget_id"]
@@ -31,16 +33,20 @@ def process_files():
 
 def _get_transactions_from_file(accounts, f, filename):
     for processor in AccountTypeToProcessor().get_processors():
-        identifier = processor.identify_account(f, accounts)
-        if identifier:
-            config = config_api.get_account_config_by_identifier(accounts, identifier)
-            if not config:
-                continue
-            try:
-                file_processor = processor(file_path=filename, account_id=config["account_id"])
-                return file_processor.get_transactions()
-            except FileNotFoundError as e:
-                print(f"{e.strerror}: {e.filename} ")
+        try:
+            identifier = processor.identify_account(f, accounts)
+            if identifier:
+                print(f"found identifier {identifier} for filename {filename}")
+                config = config_api.get_account_config_by_identifier(accounts, identifier)
+                if not config:
+                    continue
+                try:
+                    file_processor = processor(file_path=filename, account_id=config["account_id"])
+                    return file_processor.get_transactions()
+                except FileNotFoundError as e:
+                    print(f"{e.strerror}: {e.filename} ")
+        except Exception as e:
+            continue
     return []
 
 
