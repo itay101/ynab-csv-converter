@@ -2,9 +2,6 @@ const fs = require('fs');
 const {exec} = require("child_process");
 
 const rawdata = JSON.parse(fs.readFileSync('config.json'));
-const ACCOUNT_TYPE_TO_SPEC_FILE = {
-    poalim: "poalim.spec.ts"
-}
 
 function logProcess(error, stdout, stderr) {
     if (error) {
@@ -19,8 +16,8 @@ function logProcess(error, stdout, stderr) {
 }
 
 rawdata.accounts.forEach(account => {
-    if (account.type in ACCOUNT_TYPE_TO_SPEC_FILE) {
-        const process = exec(`PASSWORD=${account.password} USERNAME=${account.username} npx playwright test ${ACCOUNT_TYPE_TO_SPEC_FILE[account.type]}`, logProcess)
+    if (account.password && account.username) {
+        const process = exec(`PASSWORD=${account.password} USERNAME=${account.username} npx playwright test ${account.type}.spec.ts`, logProcess)
         process.on('exit', () => exec('python main.py', logProcess))
     }
 })

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('Fetch poalim CSV file', async ({ page }) => {
 
   await page.goto('https://login.bankhapoalim.co.il/');
   await page.goto('https://login.bankhapoalim.co.il/ng-portals/auth/he/');

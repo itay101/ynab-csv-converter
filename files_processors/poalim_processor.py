@@ -4,7 +4,7 @@ from files_processors.raw_files import YnabCsvFields
 
 INFLOW_KEY = "זכות"
 OUTFLOW_KEY = "חובה"
-
+POALIM = "poalim"
 
 class PoalimProcessor(RawCSVFile):
     def __init__(self, **kwargs):
@@ -28,8 +28,8 @@ class PoalimProcessor(RawCSVFile):
 
     @staticmethod
     def identify_account(file, accounts=[]):
-        if "poalim" in file.name:
-            return "poalim"
+        if POALIM in file.name:
+            return POALIM
         return None
 
     def _get_body_rows(self):
