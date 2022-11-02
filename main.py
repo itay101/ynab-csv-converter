@@ -9,6 +9,7 @@ CONFIG_FILE_PATH = "~/code/ynab-csv-converter/config.json"
 VALID_EXTENSIONS = (".csv", ".xls", ".xlsx")
 
 
+
 def process_files():
     config_file = open(os.path.expanduser(CONFIG_FILE_PATH))
     config_data = json.load(config_file)
