@@ -31,10 +31,12 @@ class IsracardProcessor(RawExcelFile):
             if account["type"] != enums.AccountTypes.ISRACARD.value:
                 continue
             df = pandas.read_excel(file.name)
-            account_identifier_cell_value = df.values[2][0]
-            account_identifier = account_identifier_cell_value.split(" - ")[1]
-            return account_identifier
-        return None
+            try:
+                account_identifier_cell_value = df.values[2][0]
+                account_identifier = account_identifier_cell_value.split(" - ")[1]
+                return account_identifier
+            except IndexError as e:
+                continue
 
     def _get_body_rows(self):
         rows = []

@@ -11,6 +11,7 @@ CONFIG_FILE_PATH = "config.json"
 VALID_EXTENSIONS = (".csv", ".xls", ".xlsx")
 
 
+
 def process_files():
     config_file = open(CONFIG_FILE_PATH)
     config_data = json.load(config_file)
@@ -43,7 +44,6 @@ def _get_transactions_from_file(accounts, f, filename):
                 return file_processor.get_transactions()
             except FileNotFoundError as e:
                 print(f"{e.strerror}: {e.filename} ")
-
     return []
 
 
