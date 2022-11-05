@@ -3,19 +3,12 @@
   "budget_id": "XXXX",
   "accounts": [
     {
-      "account_id": "5ae6fecc-388a-4932-b9e3-73544595671d",
-      "account_identifier": "poalim",
-      "type": "poalim",
-      "file_path": "/Users/itayroisman/Downloads/poalim.csv",
-      "export_file_path": "poalim_exported.csv",
-      "username": "BF81158",
-      "password": "l5o87TWmi7HG"
-    },
-    {
       "account_id": "XXX",
       "type": "from AccountTypes",
       "file_path": "XXXXX",
-      "export_file_path": "XXXXX"
+      "export_file_path": "XXXXX",
+      "usernam": "XXXXX",
+      "passwords": "XXXXX"
     }
   ]
 }
