@@ -8,7 +8,8 @@
       "file_path": "XXXXX",
       "export_file_path": "XXXXX",
       "usernam": "XXXXX",
-      "passwords": "XXXXX"
+      "passwords": "XXXXX",
+      "skip_automation": false
     }
   ]
 }

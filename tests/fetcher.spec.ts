@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { homedir } from 'os'
 import {exec} from "child_process";
 
 import {test} from "@playwright/test";
@@ -7,13 +8,13 @@ import {isracardFetcher} from "./isracardFetcher";
 import {maxFetcher} from "./maxFetcher";
 import {poalimFetcher} from "./poalimFetcher";
 
-const config = JSON.parse(fs.readFileSync('config.json').toString())
+const config = JSON.parse(fs.readFileSync(homedir() + '/config.json').toString())
 
 const {accounts} = config;
 
-const poalimAccounts = accounts.filter(account => account["type"] === 'poalim');
-const isracardAccounts = accounts.filter(account => account["type"] === 'isracard');
-const maxAccounts = accounts.filter(account => account["type"] === 'max');
+const poalimAccounts = accounts.filter(account => account["type"] === 'poalim' && !account["skip_automation"]);
+const isracardAccounts = accounts.filter(account => account["type"] === 'isracard' && !account["skip_automation"]);
+const maxAccounts = accounts.filter(account => account["type"] === 'max' && !account["skip_automation"]);
 
 test.describe('Fetching CSV Files from ', () => {
     poalimAccounts.forEach(account => {
@@ -27,6 +28,6 @@ test.describe('Fetching CSV Files from ', () => {
     })
 
     test.afterAll(async ({page}) => {
-        // exec("python main.py")
+        exec("python main.py")
     });
 })
