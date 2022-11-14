@@ -1,6 +1,6 @@
 import {expect} from '@playwright/test';
 
-export async function isracardFetcher({page, account}) {
+export async function isracardFetcher({page, account, balance}) {
 
     await page.goto('https://digital.isracard.co.il/personalarea/Login/?returnUrl=http://digital.isracard.co.il/personalarea/dashboard/');
 
@@ -17,6 +17,10 @@ export async function isracardFetcher({page, account}) {
 
     await page.locator('#collapse1').getByText('פירוט חיובים ועסקאות').click();
     await page.goto('https://digital.isracard.co.il/personalarea/transaction-list/');
+
+    const accountBalance = await page.locator('#wholePageExport > div:nth-child(6) > div > div > div > div.nonprint-landscape-a4 > div.transaction-details__total-info > div.ng-scope > ul > li > span').innerText()
+    balance.push({account_identifier: account['account_identifier'], balance: accountBalance})
+
 
     const [download] = await Promise.all([
         page.waitForEvent('download'),
