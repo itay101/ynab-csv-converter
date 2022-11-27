@@ -17,7 +17,7 @@ function logProcess(error, stdout, stderr) {
 
 rawdata.accounts.forEach(account => {
     if (account.password && account.username) {
-        const process = exec(`PASSWORD=${account.password} USERNAME=${account.username} npx playwright test ${account.type}.spec.ts`, logProcess)
+        const process = exec(`PASSWORD=${account.password} USERNAME=${account.username} IDENTIFIER=${account['account_identifier']} npx playwright test ${account.type}.spec.ts --headed`, logProcess)
         process.on('exit', () => exec('python main.py', logProcess))
     }
 })
