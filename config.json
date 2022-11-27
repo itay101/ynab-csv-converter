@@ -7,8 +7,8 @@
       "type": "from AccountTypes",
       "file_path": "XXXXX",
       "export_file_path": "XXXXX",
-      "usernam": "XXXXX",
-      "passwords": "XXXXX",
+      "username": "XXXXX",
+      "password": "XXXXX",
       "skip_automation": false
     }
   ]

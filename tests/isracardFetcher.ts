@@ -2,6 +2,7 @@ import {expect} from '@playwright/test';
 
 export async function isracardFetcher({page, account, balance}) {
 
+
     await page.goto('https://digital.isracard.co.il/personalarea/Login/?returnUrl=http://digital.isracard.co.il/personalarea/dashboard/');
 
     await page.getByText('או כניסה עם סיסמה קבועה').click();
