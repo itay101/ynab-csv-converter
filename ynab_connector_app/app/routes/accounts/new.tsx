@@ -3,7 +3,7 @@ import {json, redirect} from "@remix-run/node";
 import {Form, useActionData} from "@remix-run/react";
 import * as React from "react";
 
-import {createNote} from "~/models/note.server";
+import {createAccount} from "~/models/account.server";
 import {requireUserId} from "~/session.server";
 
 import {Input, Select} from "../../components";
@@ -67,7 +67,7 @@ function validateForm(formData) {
     const field = FORM_FIELDS[index]
     const value = formData.get(field.actionDataField)
     if (typeof value !== "string" || value.length === 0) {
-        return json(
+        field['error'] = json(
           { errors: { title: `${field.label} is required`, body: null } },
           { status: 400 }
         );
@@ -75,73 +75,73 @@ function validateForm(formData) {
     }
   }
 
-  export async function action({request}: ActionArgs) {
-    const userId = await requireUserId(request);
+export async function action({request}: ActionArgs) {
+  const userId = await requireUserId(request);
 
-    const formData = await request.formData();
-    const invalidInput = validateForm(formData)
-    if (invalidInput) {
-      return invalidInput
-    }
-
-
-    // const account = await createNote({ title, body, userId });
-
-    // return redirect(`/accounts/${account.id}`);
+  const formData = await request.formData();
+  const invalidInput = validateForm(formData)
+  if (invalidInput) {
+    return invalidInput
   }
 
-  export default function NewNotePage() {
-    const actionData = useActionData<typeof action>();
 
-    return (
-        <Form
-            method="post"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 8,
-              width: "100%",
-            }}
-        >
-          {FORM_FIELDS.map((field) => {
-            const {actionDataField, label} = field;
-            if (field.field === INPUT_FIELDS.INPUT) {
-              const {fieldType = "text"} = field;
-              return (
-                  <Input
-                      actionData={actionData}
-                      actionDataField={actionDataField}
-                      label={label}
-                      type={fieldType}
-                  />
-              );
-            }
+  const account = await createAccount({ title, body, userId });
 
-            if (field.field === INPUT_FIELDS.SELECT) {
-              const {options} = field;
-              return (
-                  options && (
-                      <Select
-                          actionData={actionData}
-                          actionDataField={actionDataField}
-                          label={label}
-                          options={options}
-                      />
-                  )
-              );
-            }
+  return redirect(`/accounts/${account.id}`);
+}
 
-            return null;
-          })}
+export default function NewNotePage() {
+  const actionData = useActionData<typeof action>();
 
-          <div className="text-right">
-            <button
-                type="submit"
-                className="rounded bg-blue-500 py-2 px-4 text-white hover:bg-blue-600 focus:bg-blue-400"
-            >
-              Save
-            </button>
-          </div>
-        </Form>
-    );
-  }
+  return (
+      <Form
+          method="post"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+            width: "100%",
+          }}
+      >
+        {FORM_FIELDS.map((field) => {
+          const {actionDataField, label} = field;
+          if (field.field === INPUT_FIELDS.INPUT) {
+            const {fieldType = "text"} = field;
+            return (
+                <Input
+                    actionData={actionData}
+                    actionDataField={actionDataField}
+                    label={label}
+                    type={fieldType}
+                />
+            );
+          }
+
+          if (field.field === INPUT_FIELDS.SELECT) {
+            const {options} = field;
+            return (
+                options && (
+                    <Select
+                        actionData={actionData}
+                        actionDataField={actionDataField}
+                        label={label}
+                        options={options}
+                    />
+                )
+            );
+          }
+
+          return null;
+        })}
+
+        <div className="text-right">
+          <button
+              type="submit"
+              className="rounded bg-blue-500 py-2 px-4 text-white hover:bg-blue-600 focus:bg-blue-400"
+          >
+            Save
+          </button>
+        </div>
+      </Form>
+  );
+}

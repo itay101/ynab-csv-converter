@@ -44,7 +44,7 @@ export function createAccount({
   });
 }
 
-export function deleteNote({
+export function deleteAccount({
   id,
   userId,
 }: Pick<Note, "id"> & { userId: User["id"] }) {
