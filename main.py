@@ -5,7 +5,7 @@ from common.utils import ynab_api
 from common.utils import config_api
 from enums import AccountTypeToProcessor
 
-CONFIG_FILE_PATH = "~/code/ynab-csv-converter/config.json"
+CONFIG_FILE_PATH = "~/config.json"
 VALID_EXTENSIONS = (".csv", ".xls", ".xlsx")
 
 
