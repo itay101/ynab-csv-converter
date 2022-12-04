@@ -13,9 +13,10 @@ const config = JSON.parse(fs.readFileSync(homedir() + '/config.json').toString()
 
 const {accounts} = config;
 
-const poalimAccounts = accounts.filter(account => account["type"] === 'poalim' && !account["skip_automation"]);
-const isracardAccounts = accounts.filter(account => account["type"] === 'isracard' && !account["skip_automation"]);
-const maxAccounts = accounts.filter(account => account["type"] === 'max' && !account["skip_automation"]);
+const filteredAccounts = accounts.filter(account => !account["skip_automation"]);
+const poalimAccounts = filteredAccounts.filter(account => account["type"] === 'poalim');
+const isracardAccounts = filteredAccounts.filter(account => account["type"] === 'isracard');
+const maxAccounts = filteredAccounts.filter(account => account["type"] === 'max');
 
 const balance = []
 test.describe('Fetching CSV Files from ', () => {

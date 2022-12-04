@@ -6,7 +6,10 @@
       "account_id": "XXX",
       "type": "from AccountTypes",
       "file_path": "XXXXX",
-      "export_file_path": "XXXXX"
+      "export_file_path": "XXXXX",
+      "username": "XXXXX",
+      "password": "XXXXX",
+      "skip_automation": false
     }
   ]
 }

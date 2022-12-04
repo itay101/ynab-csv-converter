@@ -1,7 +1,6 @@
 import {expect} from '@playwright/test';
 
 export async function poalimFetcher({page, account, balance}) {
-
   await page.goto('https://login.bankhapoalim.co.il/');
   await page.goto('https://login.bankhapoalim.co.il/ng-portals/auth/he/');
 

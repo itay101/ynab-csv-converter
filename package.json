@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/itay101/ynab-csv-converter#readme",
   "dependencies": {
+    "papaparse": "^5.3.2",
     "playwright": "^1.27.1"
   },
   "devDependencies": {
