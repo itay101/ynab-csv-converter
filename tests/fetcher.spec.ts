@@ -42,8 +42,6 @@ test.describe('Fetching CSV Files from ', () => {
 })
 
 test.afterAll(async ({page}) => {
-    const blob = papaparse.unparse(balance, {columns: ['account_identifier', 'balance']})
-    console.log(blob);
-
+    console.log(balance);
     exec("python main.py")
 });

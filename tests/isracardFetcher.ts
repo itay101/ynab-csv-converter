@@ -2,7 +2,6 @@ import {expect} from '@playwright/test';
 
 export async function isracardFetcher({page, account, balance}) {
 
-
     await page.goto('https://digital.isracard.co.il/personalarea/Login/?returnUrl=http://digital.isracard.co.il/personalarea/dashboard/');
 
     await page.getByText('או כניסה עם סיסמה קבועה').click();
@@ -25,7 +24,7 @@ export async function isracardFetcher({page, account, balance}) {
 
     const [download] = await Promise.all([
         page.waitForEvent('download'),
-        page.locator('.export-list > ul > li:nth-child(1)').first().click()
+        page.locator('.export-list > ul > li:nth-child(1) > img').first().click()
     ]);
 
     await download.saveAs(`${process.env.HOME}/Downloads/${account.export_file_path}`)
