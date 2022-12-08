@@ -5,7 +5,7 @@ from common.utils import ynab_api
 from common.utils import config_api
 from enums import AccountTypeToProcessor
 
-CONFIG_FILE_PATH = "config.json"
+CONFIG_FILE_PATH = "~/config.json"
 VALID_EXTENSIONS = (".csv", ".xls", ".xlsx")
 
 
@@ -24,8 +24,6 @@ def process_files():
                 transactions = [*transactions, *_get_transactions_from_file(accounts, f, f"{_root}/{filename}")]
                 f.close()
                 files_added.append(filename)
-                print("removing:", filename)
-                os.remove(f"{_root}/{filename}")
     if transactions:
         token = config_data["token"]
         budget_id = config_data["budget_id"]

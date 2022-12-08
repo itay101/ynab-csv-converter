@@ -1,4 +1,8 @@
 config.json
+/test-results/
+/playwright-report/
+/playwright/.cache/
 node_modules
+
 .idea
 playwright-report
