@@ -17,9 +17,9 @@ export function getNote({
 }
 
 export function getAccountListItems({ userId }: { userId: User["id"] }) {
-  return prisma.note.findMany({
+  return prisma.account.findMany({
     where: { userId },
-    select: { id: true, title: true },
+    select: { id: true },
     orderBy: { updatedAt: "desc" },
   });
 }

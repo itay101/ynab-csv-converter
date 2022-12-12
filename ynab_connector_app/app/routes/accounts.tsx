@@ -1,14 +1,19 @@
 import type { LoaderArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import {json, redirect} from "@remix-run/node";
 import { Form, Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
 
 import { requireUserId } from "~/session.server";
 import { useUser } from "~/utils";
 import { getAccountListItems } from "~/models/account.server";
+import {getUserById} from "~/models/user.server";
 
 export async function loader({ request }: LoaderArgs) {
   const userId = await requireUserId(request);
   const accountListItems = await getAccountListItems({ userId });
+  const user = await getUserById(userId)
+  if (!!user && !user.ynabToken) {
+    return redirect('/newToken')
+  }
   return json({ accountListItems });
 }
 
@@ -53,7 +58,7 @@ export default function AccountsPage() {
                     }
                     to={account.id}
                   >
-                    📝 {account.title}
+                    📝 {account.id}
                   </NavLink>
                 </li>
               ))}
