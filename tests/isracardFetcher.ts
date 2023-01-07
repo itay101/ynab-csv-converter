@@ -24,7 +24,7 @@ export async function isracardFetcher({page, account, balance}) {
 
     const [download] = await Promise.all([
         page.waitForEvent('download'),
-        page.locator('.export-list > ul > li:nth-child(1) > img').first().click()
+        page.locator('.card-box__hidden-mobile.export-list > ul > li:nth-child(1) > img').first().click()
     ]);
 
     await download.saveAs(`${process.env.HOME}/Downloads/${account.export_file_path}`)

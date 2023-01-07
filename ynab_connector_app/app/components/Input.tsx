@@ -6,15 +6,17 @@ interface Props {
   label: string;
   disabled?: boolean;
   type?: HTMLInputTypeAttribute;
+  value?: string | number;
 }
 
 export default function Input({
-  actionData,
-  actionDataField,
-  label,
-  type,
-  disabled = false,
-}: Props) {
+                                actionData,
+                                actionDataField,
+                                label,
+                                type,
+                                value,
+                                disabled = false,
+                              }: Props) {
   return (
     <>
       <label className="flex w-full flex-col gap-1">
@@ -22,6 +24,7 @@ export default function Input({
         <input
           name={actionDataField}
           type={type}
+          value={value}
           className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose"
           disabled={disabled}
           aria-invalid={actionData?.errors[actionDataField] ? true : undefined}

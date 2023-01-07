@@ -6,13 +6,12 @@ import * as React from "react";
 import {createAccount, getAccountListItems} from "~/models/account.server";
 import {requireUserId} from "~/session.server";
 
-import {Input, Select} from "../../components";
 import {getUserById} from "~/models/user.server";
 import {getAccountsByBudgetId, getBudgets} from "utils/ynabApi";
-import {decrypt, encrypt} from "../../../utils/encryptionUtils";
 import {useEffect, useMemo, useState} from "react";
 import {useOptionalUser} from "~/utils";
 import {FORM_FIELDS, INPUT_FIELDS} from "~/utils/accountsUtils";
+import {decrypt} from "../../../../utils/encryptionUtils";
 
 const ACCOUNT_ID_DATA_FIELD = "accountId"
 const ACCOUNT_IDENTIFIER_DATA_FIELD = "accountIdentifier"
@@ -69,12 +68,12 @@ export async function action({request}: ActionArgs) {
   return redirect(`/accounts/${account.id}`);
 }
 
-function getOptionsForSelect(list: any, selectionType: string) {
+export function getOptionsForSelect(list: any, selectionType: string) {
   const options = [{display: `Please select a ${selectionType}`, value: ''}]
   return [...options, ...list.map((item: any) => ({display: item.name, value: item.id}))]
 }
 
-export default function NewAccountPage() {
+export default function AccountForm({account}) {
   const user = useOptionalUser();
   const actionData = useActionData<typeof action>();
   const {budgets} = useLoaderData<typeof loader>();

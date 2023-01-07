@@ -20,7 +20,8 @@
     "pretest:e2e:run": "npm run build",
     "test:e2e:run": "cross-env PORT=8811 start-server-and-test start:mocks http://localhost:8811 \"npx cypress run\"",
     "typecheck": "tsc -b && tsc -b cypress",
-    "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run"
+    "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run",
+    "fetchers": "npx playwright test fetcher.spec.ts --workers 5"
   },
   "prettier": {},
   "eslintIgnore": [
@@ -34,8 +35,10 @@
     "@remix-run/react": "^1.7.6",
     "@remix-run/serve": "^1.7.6",
     "@remix-run/server-runtime": "^1.7.6",
+    "axios": "^1.2.1",
     "bcryptjs": "^2.4.3",
     "isbot": "^3.6.3",
+    "lodash": "^4.17.21",
     "papaparse": "^5.3.2",
     "playwright": "^1.27.1",
     "react": "^18.2.0",

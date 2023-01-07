@@ -27,7 +27,11 @@ const generateConfigsByBudget = (groupedByBudget: any) => {
     for (const budget in groupedByBudget) {
         const token = groupedByBudget[budget][0].token
         // @ts-ignore
-        const budgetConfig: FetchConfig = {token: token, budget_id: budget, accounts: groupedByBudget[budget].map(({token, ...rest}) => rest)};
+        const budgetConfig: FetchConfig = {
+            token: token,
+            budget_id: budget,
+            accounts: groupedByBudget[budget].map(({token, ...rest}) => rest)
+        };
         configs.push(budgetConfig);
     }
 
@@ -38,15 +42,18 @@ const balance = []
 let poalimAccounts: any[];
 let isracardAccounts: any[];
 let maxAccounts: any[];
+let configs: FetchConfig[];
 
-test.beforeAll(async () => {
-    const allAccounts = await prisma.account.findMany({
+async function fetchTests() {
+    await prisma.account.findMany({
         include: {
             user: true
         }
+    }).then(allAccounts => {
+        const groupedByBudget = groupAccountsByBudget(allAccounts);
+        configs = generateConfigsByBudget(groupedByBudget);
+
     });
-    const groupedByBudget = groupAccountsByBudget(allAccounts);
-    const configs: FetchConfig[] = generateConfigsByBudget(groupedByBudget);
 
     const {accounts} = configs[0];
 
@@ -54,12 +61,10 @@ test.beforeAll(async () => {
     poalimAccounts = filteredAccounts.filter(account => account["type"] === 'poalim');
     isracardAccounts = filteredAccounts?.filter(account => account["type"] === 'isracard');
     maxAccounts = filteredAccounts?.filter(account => account["type"] === 'max');
-});
+}
 
-test.describe('Fetching CSV Files from ', () => {
-    test("kuku", () => {
-        console.log("test")
-    })
+test.describe('Fetching CSV Files from ', async () => {
+
     poalimAccounts.forEach(account => {
         test(
             `${account["type"]}: ${account["account_identifier"]}`,
