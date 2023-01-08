@@ -81,10 +81,12 @@ async def send_transactions(budgetId: str = Form(), accountId: str = Form(),
 
     file_processor = processor(file=transactionsFile, account_id=accountId)
     transactions = file_processor.get_transactions()
+    balance = file_processor.get_balance()
     response = ynab_api.create_transactions(ynabToken, budgetId, transactions)
 
-    return JSONResponse(content={"imported": response["imported"], "duplicated": response["duplicated"]},
-                        status_code=200)
+    return JSONResponse(
+        content={"imported": response["imported"], "duplicated": response["duplicated"], "balance": balance},
+        status_code=200)
 
 
 if __name__ == "__main__":

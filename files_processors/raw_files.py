@@ -42,6 +42,9 @@ class RawFile:
                 writer.writerow([row[column_map_item.source] for column_map_item in self._header_mapping])
         file.close()
 
+    def get_balance(self):
+        return 0
+
     def get_transactions(self):
         transactions = []
         for row in self._body_rows:

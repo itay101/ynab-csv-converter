@@ -10,7 +10,7 @@ class PoalimProcessor(RawCSVFile):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self._header_mapping = [
-            HeaderMapItem(source="\ufeffתאריך", target=YnabCsvFields.DATE.value),
+            HeaderMapItem(source="תאריך", target=YnabCsvFields.DATE.value),
             HeaderMapItem(source="תיאור הפעולה", target=YnabCsvFields.PAYEE.value),
             HeaderMapItem(source="אסמכתא", target=YnabCsvFields.MEMO.value),
             HeaderMapItem(source="סכום", target=YnabCsvFields.OUTFLOW.value),
@@ -18,13 +18,17 @@ class PoalimProcessor(RawCSVFile):
         ]
 
         self._json_mapping = {
-            YnabCsvFields.DATE_KEY.value: "\ufeffתאריך",
+            YnabCsvFields.DATE_KEY.value: "תאריך",
             YnabCsvFields.PAYEE_KEY.value: "תיאור הפעולה",
             YnabCsvFields.MEMO_KEY.value: "אסמכתא",
             YnabCsvFields.AMOUNT_KEY.value: "סכום",
         }
 
+        self._balance_field = "יתרה לאחר פעולה"
         self._body_rows = self._get_body_rows()
+
+    def get_balance(self):
+        return float(self._body_rows[-1]["balance"])
 
     @staticmethod
     def identify_account(file, accounts=[]):
@@ -45,6 +49,7 @@ class PoalimProcessor(RawCSVFile):
             self._header_mapping[2].source: row[self._json_mapping[YnabCsvFields.MEMO_KEY.value]],
             self._header_mapping[3].source: self._get_ynab_amount((float(outflow or inflow)),
                                                                   outflow=inflow == ""),
+            "balance": row[self._balance_field]
         }
 
     def _split_date(self, value):
