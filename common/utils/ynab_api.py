@@ -8,5 +8,6 @@ def create_transactions(token, budget_id, transactions):
     transactions_url = f"{BUDGETS_URL}{budget_id}/transactions"
     response = requests.post(transactions_url, headers={"Authorization": f"Bearer {token}"},
                              json={"transactions": transactions})
-    print("Status Code", response.status_code)
-    print("JSON Response ", response.json())
+    response_json = response.json()
+    return {"imported": len(response_json["data"]['transaction_ids']),
+            "duplicated": len(response_json["data"]['duplicate_import_ids'])}
