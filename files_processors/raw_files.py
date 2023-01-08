@@ -85,10 +85,18 @@ class RawExcelFile(RawFile):
         self._raw_data = self._get_file_raw_data()
 
     def _get_file_raw_data(self):
-        excel_file = pandas.ExcelFile(self._file_path)
+        if self._file:
+            excel_file = pandas.ExcelFile(self._file.file)
+        else:
+            excel_file = pandas.ExcelFile(self._file_path)
 
         if self._sheet_name:
-            dfs = pandas.read_excel(self._file_path, header=self._header_row_number, sheet_name=excel_file.sheet_names)
+            if self._file:
+                file = self._file.file
+            else:
+                file = self._file_path
+
+            dfs = pandas.read_excel(file, header=self._header_row_number, sheet_name=excel_file.sheet_names)
             sheets = {}
             for key, sheet in dfs.items():
                 sheets[key] = sheet.replace(np.nan, '', regex=True)

@@ -40,7 +40,11 @@ class MaxProcessor(RawExcelFile):
 
     def _get_body_rows(self):
         rows = []
-        excel_file = pandas.ExcelFile(self._file_path)
+        if self._file:
+            file = self._file.file
+        else:
+            file = self._file_path
+        excel_file = pandas.ExcelFile(file)
         for index, data in enumerate(self._raw_data.items()):
             _, df = data
             if self._should_skip_sheet(excel_file, index):
