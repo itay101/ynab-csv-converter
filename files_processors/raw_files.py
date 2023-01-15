@@ -1,3 +1,4 @@
+import codecs
 import csv
 import datetime
 import enum
@@ -23,7 +24,8 @@ class YnabCsvFields(enum.Enum):
 
 
 class RawFile:
-    def __init__(self, file_path="", export_file_path="", account_id=""):
+    def __init__(self, file_path="", export_file_path="", account_id="", file=None):
+        self._file = file
         self._file_path = file_path
         self._export_file_path = f"export/{export_file_path}"
         self._account_id = account_id
@@ -40,15 +42,17 @@ class RawFile:
                 writer.writerow([row[column_map_item.source] for column_map_item in self._header_mapping])
         file.close()
 
+    def get_balance(self):
+        return 0
+
     def get_transactions(self):
         transactions = []
         for row in self._body_rows:
             transactions.append(self._get_json(row))
         return transactions
 
-    @staticmethod
-    def identify_account(file, accounts=[]):
-        return
+    def is_valid_content_type(self, content_type):
+        return content_type == self._content_type
 
     def _get_json(self, row):
         amount = row[self._json_mapping[YnabCsvFields.AMOUNT_KEY.value]]
@@ -78,15 +82,24 @@ class RawFile:
 class RawExcelFile(RawFile):
     def __init__(self, header_row_number, sheet_name=[0], **kwargs):
         super().__init__(**kwargs)
+        self.content_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         self._header_row_number = header_row_number
         self._sheet_name = sheet_name
         self._raw_data = self._get_file_raw_data()
 
     def _get_file_raw_data(self):
-        excel_file = pandas.ExcelFile(self._file_path)
+        if self._file:
+            excel_file = pandas.ExcelFile(self._file.file)
+        else:
+            excel_file = pandas.ExcelFile(self._file_path)
 
         if self._sheet_name:
-            dfs = pandas.read_excel(self._file_path, header=self._header_row_number, sheet_name=excel_file.sheet_names)
+            if self._file:
+                file = self._file.file
+            else:
+                file = self._file_path
+
+            dfs = pandas.read_excel(file, header=self._header_row_number, sheet_name=excel_file.sheet_names)
             sheets = {}
             for key, sheet in dfs.items():
                 sheets[key] = sheet.replace(np.nan, '', regex=True)
@@ -99,10 +112,15 @@ class RawExcelFile(RawFile):
 class RawCSVFile(RawFile):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self._body_rows = self._get_file_raw_data()[1]
+        self.content_type = "text/csv"
+        self._body_rows = self._get_file_raw_data()
 
     def _get_file_raw_data(self):
+        if self._file:
+            file = csv.DictReader(codecs.iterdecode(self._file.file, 'utf-8'))
+            return list(file)[1:]
+
         with open(os.path.expandvars(self._file_path), 'r', encoding='utf-8') as file:
             lines = file.read().splitlines()
             reader = csv.DictReader(lines)
-            return reader.fieldnames, list(reader)
+            return list(reader)[1:]

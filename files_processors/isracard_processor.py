@@ -14,6 +14,7 @@ class IsracardProcessor(RawExcelFile):
             HeaderMapItem(source="פירוט נוסף", target=YnabCsvFields.MEMO.value),
             HeaderMapItem(source="סכום חיוב", target=YnabCsvFields.OUTFLOW.value),
         ]
+        self._balance_field = 0
         self._header_mapping = [HeaderMapItem(source="תאריך רכישה", target=YnabCsvFields.DATE.value), *common_mapping]
         self._json_mapping = {
             YnabCsvFields.DATE_KEY.value: "תאריך רכישה",
@@ -38,6 +39,9 @@ class IsracardProcessor(RawExcelFile):
             except IndexError as e:
                 continue
 
+    def get_balance(self):
+        return self._balance_field
+
     def _get_body_rows(self):
         rows = []
         is_secondary_table = False
@@ -58,6 +62,8 @@ class IsracardProcessor(RawExcelFile):
         return row[1] != "" and row[1] != "סך חיוב בש\"ח:"
 
     def _is_secondary_table(self, row):
+        if row[1] == "סך חיוב בש\"ח:":
+            self._balance_field = row[4]
         return row[0] == "עסקאות בחו˝ל"
 
     def _get_main_table_row_object(self, row):
