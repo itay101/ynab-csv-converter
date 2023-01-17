@@ -1,5 +1,3 @@
-from functools import wraps
-
 import uvicorn
 import firebase_admin
 import pyrebase
@@ -52,7 +50,7 @@ async def signup(request: Request):
             email=email,
             password=password
         )
-        return JSONResponse(content={'message': f'Successfully created user {user.uid}'}, status_code=200)
+        return JSONResponse(content={'uid': user.uid}, status_code=200)
     except Exception as e:
         return HTTPException(detail={'message': 'Error Creating User'}, status_code=400)
 
