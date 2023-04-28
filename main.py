@@ -27,7 +27,7 @@ def process_files():
     if transactions:
         token = config_data["token"]
         budget_id = config_data["budget_id"]
-        ynab_api.create_transactions(token, budget_id, transactions)
+        print(ynab_api.create_transactions(token, budget_id, transactions))
 
 
 def _get_transactions_from_file(accounts, f, filename):

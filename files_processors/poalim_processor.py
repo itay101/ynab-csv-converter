@@ -4,13 +4,13 @@ from files_processors.raw_files import YnabCsvFields
 
 INFLOW_KEY = "זכות"
 OUTFLOW_KEY = "חובה"
-POALIM = "poalim"
+POALIM = "shekel"
 
 class PoalimProcessor(RawCSVFile):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self._header_mapping = [
-            HeaderMapItem(source="תאריך", target=YnabCsvFields.DATE.value),
+            HeaderMapItem(source="\ufeffתאריך", target=YnabCsvFields.DATE.value),
             HeaderMapItem(source="תיאור הפעולה", target=YnabCsvFields.PAYEE.value),
             HeaderMapItem(source="אסמכתא", target=YnabCsvFields.MEMO.value),
             HeaderMapItem(source="סכום", target=YnabCsvFields.OUTFLOW.value),
@@ -18,7 +18,7 @@ class PoalimProcessor(RawCSVFile):
         ]
 
         self._json_mapping = {
-            YnabCsvFields.DATE_KEY.value: "תאריך",
+            YnabCsvFields.DATE_KEY.value: "\ufeffתאריך",
             YnabCsvFields.PAYEE_KEY.value: "תיאור הפעולה",
             YnabCsvFields.MEMO_KEY.value: "אסמכתא",
             YnabCsvFields.AMOUNT_KEY.value: "סכום",
@@ -33,7 +33,7 @@ class PoalimProcessor(RawCSVFile):
     @staticmethod
     def identify_account(file, accounts=[]):
         if POALIM in file.name:
-            return POALIM
+            return "poalim"
         return None
 
     def _get_body_rows(self):

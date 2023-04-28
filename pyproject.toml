@@ -1,0 +1,7 @@
+[project]
+name = "ynab_csv_converter"
+version = "0.0.1"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}

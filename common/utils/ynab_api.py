@@ -1,3 +1,5 @@
+from typing import Dict
+
 import requests as requests
 
 BASE_URL = "https://api.youneedabudget.com/v1"
