@@ -2,7 +2,7 @@ import { initializeApp, getApps, getApp } from "@firebase/app";
 import {getAuth} from "@firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyDwkB1u_fH6zrfqOzk0GqZXBIb2mUWXOoY",
   authDomain: "ynab-connector-38815.firebaseapp.com",
   projectId: "ynab-connector-38815",

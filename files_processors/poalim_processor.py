@@ -37,9 +37,9 @@ class PoalimProcessor(RawCSVFile):
         return None
 
     def _get_body_rows(self):
-        return [self._get_row_object(row) for row in self._body_rows]
+        return [self._getRowObject(row) for row in self._body_rows]
 
-    def _get_row_object(self, row):
+    def _getRowObject(self, row):
         year, month, day = self._split_date(row[self._json_mapping[YnabCsvFields.DATE_KEY.value]])
         outflow = row[OUTFLOW_KEY]
         inflow = row[INFLOW_KEY]
@@ -47,7 +47,7 @@ class PoalimProcessor(RawCSVFile):
             self._header_mapping[0].source: self._get_ynab_date(year, month, day),
             self._header_mapping[1].source: row[self._json_mapping[YnabCsvFields.PAYEE_KEY.value]],
             self._header_mapping[2].source: row[self._json_mapping[YnabCsvFields.MEMO_KEY.value]],
-            self._header_mapping[3].source: self._get_ynab_amount((float(outflow or inflow)),
+            self._header_mapping[3].source: self._getYnabAmount((float(outflow or inflow)),
                                                                   outflow=inflow == ""),
             "balance": row[self._balance_field]
         }

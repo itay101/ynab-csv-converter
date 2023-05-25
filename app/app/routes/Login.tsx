@@ -10,11 +10,11 @@ import {
     Link,
     useActionData,
     useCatch,
-    useFetcher,
+    useFetcher, useNavigate,
 } from "@remix-run/react";
 import {useRef} from "react";
 import {sessionLogin} from "../../fb.sessions.server";
-import {LoaderArgs, redirect} from "@remix-run/node";
+import type {LoaderArgs} from "@remix-run/node";
 
 //create a stylesheet ref for the auth.css file
 export let links = () => {

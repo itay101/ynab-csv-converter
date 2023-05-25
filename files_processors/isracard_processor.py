@@ -72,7 +72,7 @@ class IsracardProcessor(RawExcelFile):
             self._header_mapping[0].source: self._get_ynab_date(year, month, day),
             self._header_mapping[1].source: row[1],
             self._header_mapping[2].source: row[7],
-            self._header_mapping[3].source: self._get_ynab_amount(row[4]),
+            self._header_mapping[3].source: self._getYnabAmount(row[4]),
         }
 
     def _get_secondary_table_row_object(self, row):
@@ -81,7 +81,7 @@ class IsracardProcessor(RawExcelFile):
             self._header_mapping[0].source: self._get_ynab_date(year, month, day),
             self._header_mapping[1].source: row[2],
             self._header_mapping[2].source: row[7],
-            self._header_mapping[3].source: self._get_ynab_amount(row[5]),
+            self._header_mapping[3].source: self._getYnabAmount(row[5]),
         }
 
     def _should_skip_row(self, row):

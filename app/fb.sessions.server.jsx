@@ -4,19 +4,20 @@ import {redirect, createCookieSessionStorage} from "@remix-run/node"; // or "@re
 // Initialize Firebase
 // ---------------------
 import * as admin from "firebase-admin";
+import {firebaseConfig} from "./firebase.client";
 
 if (admin.apps.length === 0) {
     admin.initializeApp({
         credential: admin.credential.cert({
-            apiKey: "AIzaSyDwkB1u_fH6zrfqOzk0GqZXBIb2mUWXOoY",
-            authDomain: "ynab-connector-38815.firebaseapp.com",
-            projectId: "ynab-connector-38815",
+            apiKey: firebaseConfig.apiKey,
+            authDomain: firebaseConfig.authDomain,
+            projectId: firebaseConfig.projectId,
             private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDKwYtHTZ8qraEa\nZbaWQ5EsTBoMjZDtF6555yrfJuYwwBAMoHVOqIZY0LUOK9ACgVGWHtd/WagovGDH\n8VS0GeJlPGq7nVJVJl862CN9Mhh9Ehrf1LNOo7ntcMQw5Ck9cY9gptkGKnz3hqs8\nFz4bvahvndx/ub1lipZg6BzPUY/kFxY+ihN7aYwjKC1Jsm3oxPjulUxAGxwNbKBL\n8mbYiKyYLNCnZPvAnJ1qsltbBxMjQyka8tuoQDSv5/8+ZvUIWkrekAslfIXTiOg6\nXpC2w3wj0mN5xXB4u6FGB2cJsfPcdNooW0cxV05qKjvruxQXCcqEwA5XX76yK4x4\njuBtz3lxAgMBAAECggEAEAhmjJCRQpn9o5PU1wrOiuIVRaMK79lpcd9ICK+C3VEB\nE+NUucMVJVnF/DH8hIfLg7Ag2nbXysM9CrwR6ba9EpDiYCXF3tDZdlKk2V+h1LLS\nG2f7Q8xdK+7r79fJTdme4x9eb7pIk0Qu+/uOIDoKyZGCLNSed7SSEcvY8PXiOto9\nq7xQpvSwoSd3S02KmN6l9WKFIgH+uEGrcjXxRp9HiEMg5DXJGtRut/OgZT3GDQ0k\ndYnOKyP5llO3uKBR9y6brQYXHanJKwP0LWxfJ4H/7jQwIIIBgUpXAXFNbrn8x0rp\nJC91nTjaOLxQfrOezGyqY/5LYIuTETvHgDj9EOGQtwKBgQDmArvDJPEdFLcewJ6w\n1vetK/Mep9aWzLFct9GXZWi+Hay9wkwjS+O1w147kFdkfYKwXYBiGtmht6l7ua9h\n2Kul9uPWCgTRoiSrfKYi6q2/QuCysyjLG8cqnKhRmZ2ZLN2mzwLS06S4YpXOUm6V\n7RyL9JaFiC8/Q4R6xq5jiX/25wKBgQDhqnIDNnKvO7nQZenHc+BVN/J12WYUrhil\nxlZ5GiZNI7zrtbRySdFGo3429NwRSTaS9Pz1mwcW7c5TkJIe//laKvNjqwaULWx6\nNFCeQOztbsW9IXW2yo3Y6/7OdcOrtgNVSAQvWgiqnBsRe98BS8HDQW5Vb/w88N7s\nOwiUoSf55wKBgQCXDfSBlCFFF/WrHJUbThIaiGKCH3euUX+phI8A/nhrYtGvTYrz\nI0PIeyXHuGOse0D40m8d/sQukI+d0bR8be9Mb3fxeWLwyauLc7En/TdeBG3M7hw8\nR2HlejyQWnJFxlFK22jfTF9BOH1ponk9vRqiT18LEwT0Z0L53sFoXUTMwQKBgQCK\n4UfrfD3WZE5119KpQkIkkBrytkmhnodito6PVy2NOdpRwfD8iTt3WrUZg1ZQeRtS\nE93+FVumm9HoEcgrteMyv84sX5vb45yoFLwsuM5XTV36iLYWOdBUWODnFQjIC2s/\nt+ODdMhyn0H1X6Od+46S6RjLEfFNW/wFrEsalZexrwKBgHDgnkVVGGAaE+1m6Yxx\n4vZBZi1RfQVB61MJ0aLAGoSqqevUAmS0LeTeOnORo/30qSQYxk8xiJ03osfYIFzs\nSKIQxYToZ27hu7t/9RX7cGtNYo+srvtMTK4//dakPNWPyhyLu9bJ9i8Y//h7lpsL\nFCH0zhWWhZQqa/faGwlXwd9R\n-----END PRIVATE KEY-----\n",
             client_email: "firebase-adminsdk-vcisv@ynab-connector-38815.iam.gserviceaccount.com",
-            storageBucket: "ynab-connector-38815.appspot.com",
-            messagingSenderId: "114513090606",
-            appId: "1:114513090606:web:a2bd32e196a6997c44e7bf",
-            measurementId: "G-7S9YPSWK26"
+            storageBucket: firebaseConfig.storageBucket,
+            messagingSenderId: firebaseConfig.messagingSenderId,
+            appId: firebaseConfig.appId,
+            measurementId: firebaseConfig.measurementId
         }),
     });
 }

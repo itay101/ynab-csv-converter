@@ -8,7 +8,7 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export async function loader({request}: LoaderArgs) {
-    const {decodedClaims, error} = await isSessionValid(request, "home/");
+    const {decodedClaims, error} = await isSessionValid(request, "login/");
 
     return json({})
 
