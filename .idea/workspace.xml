@@ -4,30 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dacec18b-3ad3-4f29-8510-1ecba65290e2" name="Changes" comment="Login/authorize flow is working">
-      <change afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/converter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/isracardProcessor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/maxProcessor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/poalimProcessor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawCSVFile.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawExcelFile.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawFile.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.ts" afterDir="false" />
+    <list default="true" id="dacec18b-3ad3-4f29-8510-1ecba65290e2" name="Changes" comment="temp">
+      <change afterPath="$PROJECT_DIR$/app/app/utils/consts/poalim.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/babel.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/routes/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/routes/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/routes/_index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/routes/_index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/routes/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/routes/home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/autorizeYnab.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/autorizeYnab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/ynabApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/ynabApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fb.sessions.server.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/fb.sessions.server.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/firebase.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/firebase.client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/poalimProcessor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/poalimProcessor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/utils/ynab_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/ynab_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files_processors/isracard_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_processors/isracard_processor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_processors/max_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_processors/max_processor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_processors/poalim_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_processors/poalim_processor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_processors/raw_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_processors/raw_files.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +94,9 @@
     <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/files_processors/raw_files.py" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2KNXuWcIjhL0cDAm8k4L49FCs44" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -116,12 +106,14 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;add__app&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/itayroisman/code/ynab-csv-converter/app/node_modules/jest&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/itayroisman/code/ynab-csv-converter/app/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -132,6 +124,7 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/app/utils/consts" />
       <recent name="$PROJECT_DIR$/app/app/utils/filesProcessors" />
       <recent name="$PROJECT_DIR$/app/app/utils" />
       <recent name="$PROJECT_DIR$/app" />
@@ -139,6 +132,31 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main (1)">
+    <configuration name="getTransactionsFromFile" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.test.ts" />
+      <test-names>
+        <test-name value="getTransactionsFromFile" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="getTransactionsFromFile.Is processing a dummy file" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.test.ts" />
+      <test-names>
+        <test-name value="getTransactionsFromFile" />
+        <test-name value="Is processing a dummy file" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ynab-csv-converter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,7 +179,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ynab_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ynab-csv-converter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -169,12 +187,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/utils/ynab_api.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -183,31 +201,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="run" />
       <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/app/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="start:env" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/app/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start:env" />
+        <script value="test" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -216,10 +214,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="npm.dev" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="npm.start:env" />
+        <item itemvalue="Python.ynab_api" />
+        <item itemvalue="Jest.getTransactionsFromFile" />
+        <item itemvalue="Jest.getTransactionsFromFile.Is processing a dummy file" />
+        <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
   </component>
@@ -267,7 +265,26 @@
       <workItem from="1683872952149" duration="3174000" />
       <workItem from="1684303274242" duration="629000" />
       <workItem from="1684597734598" duration="551000" />
-      <workItem from="1685001544849" duration="763000" />
+      <workItem from="1685001544849" duration="1283000" />
+      <workItem from="1685003066786" duration="8573000" />
+      <workItem from="1685299969379" duration="2410000" />
+      <workItem from="1686299610671" duration="624000" />
+      <workItem from="1686979124465" duration="631000" />
+      <workItem from="1687587314551" duration="1467000" />
+      <workItem from="1688131253649" duration="1210000" />
+      <workItem from="1688391094543" duration="628000" />
+      <workItem from="1689769264965" duration="618000" />
+      <workItem from="1690094928499" duration="890000" />
+      <workItem from="1690543706399" duration="1184000" />
+      <workItem from="1690708044739" duration="667000" />
+      <workItem from="1691131800479" duration="621000" />
+      <workItem from="1691593904372" duration="1873000" />
+      <workItem from="1691663966622" duration="599000" />
+      <workItem from="1691668592481" duration="2253000" />
+      <workItem from="1692371079944" duration="972000" />
+      <workItem from="1692802119709" duration="5093000" />
+      <workItem from="1693200996747" duration="594000" />
+      <workItem from="1693378752873" duration="391000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed signup">
       <created>1673941995728</created>
@@ -276,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673941995728</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="temp">
+      <created>1685002516323</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685002516324</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +319,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed signup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed signup" />
+    <MESSAGE value="temp" />
+    <option name="LAST_COMMIT_MESSAGE" value="temp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -310,20 +335,15 @@
           <line>85</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/files_processors/isracard_processor.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/old_app/app/src/components/AuthorizedYnab.tsx</url>
           <line>10</line>
           <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.ts</url>
-          <line>19</line>
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.ts</url>
-          <line>35</line>
-          <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawCSVFile.ts</url>
@@ -331,10 +351,19 @@
           <option name="timeStamp" value="138" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="processor" language="Python" />
+        <watch expression="row" language="Python" />
+        <watch expression="cell_value" language="Python" />
+        <watch expression="print(e)" language="Python" />
       </configuration>
       <configuration name="js.build_tools.npm">
         <watch expression=" Array.from(files)" language="TypeScript JSX" />
@@ -343,7 +372,8 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ynab_csv_converter$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1684597741297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ynab_csv_converter$ynab_api.coverage" NAME="ynab_api Coverage Results" MODIFIED="1692959299134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common/utils" />
+    <SUITE FILE_PATH="coverage/ynab_csv_converter$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1693378756409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ynab_csv_converter$main.coverage" NAME="main Coverage Results" MODIFIED="1681485958557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api" />
   </component>
 </project>
