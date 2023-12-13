@@ -8,18 +8,76 @@
       <change afterPath="$PROJECT_DIR$/app/app/utils/consts/poalim.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.test.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ynab-csv-converter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ynab-csv-converter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/app/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/entry.client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/entry.client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/entry.server.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/entry.server.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/routes/AuthorizeYnab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/routes/AuthorizeYnab.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/routes/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/routes/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/routes/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/routes/Signup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/routes/_index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/routes/_index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/routes/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/routes/home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/autorizeYnab.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/autorizeYnab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/converter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/converter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/isracardProcessor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/isracardProcessor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/maxProcessor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/maxProcessor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/poalimProcessor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/poalimProcessor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawCSVFile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawCSVFile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawExcelFile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawExcelFile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawFile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawFile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/utils/ynabApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/ynabApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/fb.sessions.server.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/fb.sessions.server.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/firebase.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/firebase.client.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/remix.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/remix.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/remix.env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/remix.env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/utils/config_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/config_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/utils/ynab_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/ynab_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/enums.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files_processors/isracard_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_processors/isracard_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files_processors/max_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_processors/max_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files_processors/poalim_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_processors/poalim_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files_processors/raw_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_processors/raw_files.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playwright.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/playwright.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/fetcher.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/fetcher.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/isracardFetcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/isracardFetcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/max.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/max.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/maxFetcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/maxFetcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/poalimFetcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/poalimFetcher.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -106,6 +164,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;add__app&quot;,
@@ -284,7 +343,34 @@
       <workItem from="1692371079944" duration="972000" />
       <workItem from="1692802119709" duration="5093000" />
       <workItem from="1693200996747" duration="594000" />
-      <workItem from="1693378752873" duration="391000" />
+      <workItem from="1693378752873" duration="433000" />
+      <workItem from="1693664448058" duration="1242000" />
+      <workItem from="1693896867837" duration="5000" />
+      <workItem from="1694007245212" duration="607000" />
+      <workItem from="1694014265087" duration="1000" />
+      <workItem from="1694014509177" duration="41000" />
+      <workItem from="1694015330040" duration="30000" />
+      <workItem from="1694330285009" duration="1148000" />
+      <workItem from="1694849993533" duration="1248000" />
+      <workItem from="1695018093455" duration="2000" />
+      <workItem from="1695019004987" duration="609000" />
+      <workItem from="1695224173351" duration="2667000" />
+      <workItem from="1695290696727" duration="10000" />
+      <workItem from="1695456472400" duration="2116000" />
+      <workItem from="1696090125818" duration="6617000" />
+      <workItem from="1696661758494" duration="1474000" />
+      <workItem from="1697301117588" duration="2311000" />
+      <workItem from="1697621344400" duration="602000" />
+      <workItem from="1698403237577" duration="5112000" />
+      <workItem from="1699276162402" duration="573000" />
+      <workItem from="1699353037163" duration="1786000" />
+      <workItem from="1699719452454" duration="604000" />
+      <workItem from="1699858426559" duration="606000" />
+      <workItem from="1700293014306" duration="588000" />
+      <workItem from="1700649199485" duration="594000" />
+      <workItem from="1700903892060" duration="645000" />
+      <workItem from="1701586169603" duration="2449000" />
+      <workItem from="1702202301669" duration="612000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed signup">
       <created>1673941995728</created>
@@ -300,7 +386,15 @@
       <option name="project" value="LOCAL" />
       <updated>1685002516324</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="temp">
+      <option name="closed" value="true" />
+      <created>1693379176546</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693379176547</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,11 +429,6 @@
           <line>85</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/files_processors/isracard_processor.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/old_app/app/src/components/AuthorizedYnab.tsx</url>
           <line>10</line>
@@ -364,6 +453,7 @@
         <watch expression="row" language="Python" />
         <watch expression="cell_value" language="Python" />
         <watch expression="print(e)" language="Python" />
+        <watch expression="transactions[67]" />
       </configuration>
       <configuration name="js.build_tools.npm">
         <watch expression=" Array.from(files)" language="TypeScript JSX" />
@@ -373,7 +463,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ynab_csv_converter$ynab_api.coverage" NAME="ynab_api Coverage Results" MODIFIED="1692959299134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common/utils" />
-    <SUITE FILE_PATH="coverage/ynab_csv_converter$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1693378756409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ynab_csv_converter$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1702202309447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ynab_csv_converter$main.coverage" NAME="main Coverage Results" MODIFIED="1681485958557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api" />
   </component>
 </project>

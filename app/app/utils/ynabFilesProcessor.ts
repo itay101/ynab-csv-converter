@@ -20,7 +20,7 @@ export function processFiles(files) {
         const filename = file.name
         transactions = [
             ...transactions,
-            ..._getTransactionsFromFile(accounts, file, filename),
+            ...getTransactionsFromFile(accounts, file, filename),
         ];
     }
     // if (transactions.length) {
@@ -30,7 +30,7 @@ export function processFiles(files) {
     // }
 }
 
-function _getTransactionsFromFile(accounts, f, filename) {
+function getTransactionsFromFile(accounts, f, filename) {
     for (const processor of new AccountTypeToProcessor().getProcessors()) {
         try {
             const identifier = processor.identifyAccount(f, accounts);

@@ -1,5 +1,6 @@
 import RawCSVFile from "~/utils/filesProcessors/rawFiles/RawCSVFile";
 import {YnabCsvFields} from "~/utils/filesProcessors/rawFiles/RawFile";
+import {TRANSLATION, JSON_MAPPING} from "../consts/poalim"
 
 const INFLOW_KEY = "זכות";
 const OUTFLOW_KEY = "חובה";
@@ -9,19 +10,14 @@ export class PoalimProcessor extends RawCSVFile {
     constructor(kwargs: any) {
         super(kwargs);
         this._header_mapping = [
-            new HeaderMapItem({source: "\ufeffתאריך", target: YnabCsvFields.DATE}),
-            new HeaderMapItem({source: "תיאור הפעולה", target: YnabCsvFields.PAYEE}),
-            new HeaderMapItem({source: "אסמכתא", target: YnabCsvFields.MEMO}),
-            new HeaderMapItem({source: "סכום", target: YnabCsvFields.OUTFLOW}),
-            new HeaderMapItem({source: "זכות", target: YnabCsvFields.INFLOW}),
+            new HeaderMapItem({source: TRANSLATION.DATE, target: YnabCsvFields.DATE}),
+            new HeaderMapItem({source: TRANSLATION.PAYEE, target: YnabCsvFields.PAYEE}),
+            new HeaderMapItem({source: TRANSLATION.MEMO, target: YnabCsvFields.MEMO}),
+            new HeaderMapItem({source: TRANSLATION.AMOUNT, target: YnabCsvFields.OUTFLOW}),
+            new HeaderMapItem({source: TRANSLATION.INFLOW, target: YnabCsvFields.INFLOW}),
         ];
 
-        this._json_mapping = {
-            [YnabCsvFields.DATE_KEY]: "\ufeffתאריך",
-            [YnabCsvFields.PAYEE_KEY]: "תיאור הפעולה",
-            [YnabCsvFields.MEMO_KEY]: "אסמכתא",
-            [YnabCsvFields.AMOUNT_KEY]: "סכום",
-        };
+        this._json_mapping = JSON_MAPPING;
 
         this._balance_field = "יתרה לאחר פעולה";
         this._body_rows = this._get_body_rows();

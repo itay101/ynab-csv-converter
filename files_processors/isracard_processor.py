@@ -86,7 +86,7 @@ class IsracardProcessor(RawExcelFile):
         }
 
     def _get_secondary_table_row_object(self, row):
-        day, month, year = self._split_date(row[1])
+        day, month, year = self._split_date(row[0])
         return {
             self._header_mapping[0].source: self._get_ynab_date(year, month, day),
             self._header_mapping[1].source: row[2],
