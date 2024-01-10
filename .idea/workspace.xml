@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bcdea02-fee0-4de6-9fdd-0294a54932cd" name="Changes" comment="Added missing files">
-      <change afterPath="$PROJECT_DIR$/app/lib/processors/IsracardProcessor.js" afterDir="false" />
+    <list default="true" id="0bcdea02-fee0-4de6-9fdd-0294a54932cd" name="Changes" comment="Added identifier for IsracardProcessor.js">
+      <change afterPath="$PROJECT_DIR$/app/lib/processors/PoalimProcessor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lib/processors/base/CSVFileProcessor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/FileUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/FileUpload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/processors/MaxProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/processors/MaxProcessor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/processors/base/ExcelFileProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/processors/base/ExcelFileProcessor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/processors/processors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/processors/processors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playwright.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/fetcher.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/isracardFetcher.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/max.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/maxFetcher.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/poalimFetcher.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +105,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/lib/processors" />
+      <recent name="$PROJECT_DIR$/app/lib/processors/base" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/app" />
@@ -181,7 +186,7 @@
       <workItem from="1703512310756" duration="593000" />
       <workItem from="1703694442347" duration="3054000" />
       <workItem from="1704123545715" duration="762000" />
-      <workItem from="1704442262343" duration="31912000" />
+      <workItem from="1704442262343" duration="34092000" />
     </task>
     <task id="LOCAL-00001" summary="Added identifier for MaxProcessor.js">
       <option name="closed" value="true" />
@@ -199,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704878562454</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added identifier for IsracardProcessor.js">
+      <option name="closed" value="true" />
+      <created>1704880588301</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704880588301</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +221,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added identifier for MaxProcessor.js" />
     <MESSAGE value="Added missing files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added missing files" />
+    <MESSAGE value="Added identifier for IsracardProcessor.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added identifier for IsracardProcessor.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

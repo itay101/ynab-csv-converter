@@ -1,12 +1,14 @@
 import {getConfigByIdentifier} from "@/lib/accounts";
-import FileProcessor from "@/lib/processors/base/FileProcessor";
-import MaxProcessor from "@/lib/processors/MaxProcessor";
 import IsracardProcessor from "@/lib/processors/IsracardProcessor";
+import MaxProcessor from "@/lib/processors/MaxProcessor";
+import PoalimProcessor from "@/lib/processors/PoalimProcessor";
+import FileProcessor from "@/lib/processors/base/FileProcessor";
 
-const PROCESSORS = [MaxProcessor, IsracardProcessor];
+const PROCESSORS = [MaxProcessor, IsracardProcessor, PoalimProcessor];
 
 async function getIdentifierFromFile(file) {
     const fileExtension = FileProcessor.getFileExtension(file.name)
+
     let identifier;
     for (let i = 0; i < PROCESSORS.length; i++) {
         const processor = new PROCESSORS[i]();
