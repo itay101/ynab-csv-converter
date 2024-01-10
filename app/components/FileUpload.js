@@ -7,6 +7,7 @@ const Dropzone = ({onFilesDropped}) => {
     const [files, setFiles] = useState([]);
 
     useEffect(() => {
+        onFilesDropped([])
         const formData = new FormData();
         files.forEach((file) => formData.append('files[]', file));
         fetch('/api/account/identifyByFiles', {method: 'POST', body: formData})

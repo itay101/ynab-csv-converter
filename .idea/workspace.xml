@@ -4,57 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bcdea02-fee0-4de6-9fdd-0294a54932cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/accounts/[id]/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/api/account/identifyByFiles/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/FileUpload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Navigation.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/accounts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/processors/MaxProcessor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/processors/base/ExcelFileProcessor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/processors/base/FileProcessor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/processors/processors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/ynabApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="0bcdea02-fee0-4de6-9fdd-0294a54932cd" name="Changes" comment="Added missing files">
+      <change afterPath="$PROJECT_DIR$/app/lib/processors/IsracardProcessor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ynab-csv-converter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ynab-csv-converter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/entry.client.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/entry.server.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/root.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/routes/AuthorizeYnab.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/routes/Login.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/routes/Signup.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/routes/_index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/routes/home/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/autorizeYnab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/consts/poalim.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/converter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/isracardProcessor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/maxProcessor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/poalimProcessor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawCSVFile.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawExcelFile.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/filesProcessors/rawFiles/RawFile.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/ynabApi.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/utils/ynabFilesProcessor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/fb.sessions.server.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/firebase.client.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/remix.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/remix.env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/FileUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/FileUpload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/processors/MaxProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/processors/MaxProcessor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/processors/base/ExcelFileProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/processors/base/ExcelFileProcessor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/processors/processors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/processors/processors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +86,7 @@
     "git-widget-placeholder": "add__app",
     "javascript.nodejs.core.library.configured.version": "21.5.0",
     "javascript.nodejs.core.library.typings.version": "20.10.6",
-    "last_opened_file_path": "/Users/itay.roisman/code/ynab-csv-converter",
+    "last_opened_file_path": "/Users/itay.roisman/code/ynab-csv-converter/app/lib/processors",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -141,6 +99,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/lib/processors" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/app" />
       <recent name="$PROJECT_DIR$/app" />
@@ -220,12 +181,34 @@
       <workItem from="1703512310756" duration="593000" />
       <workItem from="1703694442347" duration="3054000" />
       <workItem from="1704123545715" duration="762000" />
-      <workItem from="1704442262343" duration="30006000" />
+      <workItem from="1704442262343" duration="31912000" />
     </task>
+    <task id="LOCAL-00001" summary="Added identifier for MaxProcessor.js">
+      <option name="closed" value="true" />
+      <created>1704878499129</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704878499129</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added missing files">
+      <option name="closed" value="true" />
+      <created>1704878562454</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704878562454</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added identifier for MaxProcessor.js" />
+    <MESSAGE value="Added missing files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added missing files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

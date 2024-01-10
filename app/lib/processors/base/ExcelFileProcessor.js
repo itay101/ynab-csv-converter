@@ -1,46 +1,31 @@
-import ExcelJS from 'exceljs';
+
+import {readFile as readXLSXFile} from 'xlsx';
+import {readFile as readXLSFile} from 'xlsjs';
 
 import FileProcessor from "@/lib/processors/base/FileProcessor";
-import path from "path";
-import fs from "fs";
 
 export default class ExcelFileProcessor extends FileProcessor {
-    constructor() {
-        super({fileExtension: "xlsx"});
-    }
-
-    async getFileContent(file) {
-        const tempDir = path.join(process.cwd(), 'temp');
-        await fs.mkdir(tempDir, {recursive: true});
-        const tempFilePath = path.join(tempDir, `${Date.now()}_${file.name}`);
-
-        // Move the uploaded file to the temporary location
-        await fs.rename(file.path, tempFilePath);
-
-        return tempFilePath;
-
-        // Read and process the Excel file using exceljs
-        const workbook = new ExcelJS.Workbook();
-        await workbook.xlsx.readFile(tempFilePath);
-        const worksheet = workbook.getWorksheet(1);
-
-        // Process the data from the worksheet
-        worksheet.eachRow((row, rowNumber) => {
-            console.log(`Row ${rowNumber} = ${JSON.stringify(row.values)}`);
-        });
-
-        // Clean up: Delete the temporary file
-        await fs.unlink(tempFilePath);
+    constructor(fileExtension = "xlsx") {
+        super({fileExtension});
     }
 
     async getCellValue(file, sheetName, row, column) {
         const fileBuffer = await file.arrayBuffer();
-        const workbook = new ExcelJS.Workbook();
-        await workbook.xlsx.load(fileBuffer);
+        let workbook;
 
-        const worksheet = workbook.getWorksheet(sheetName);
-        const cell = worksheet.getCell(`${column}${row}`);
+        if (this.fileExtension === "xlsx") {
+            workbook =  await readXLSXFile(fileBuffer);
+        } else {
+            workbook = await readXLSFile(fileBuffer);
+        }
 
-        return cell.value;
+        if (!sheetName) {
+            sheetName = workbook.SheetNames[0]
+        }
+
+        const worksheet = workbook.Sheets[sheetName];
+        const cell = worksheet[`${column}${row}`];
+
+        return cell?.v;
     }
 }
