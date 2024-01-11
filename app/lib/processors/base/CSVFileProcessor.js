@@ -1,6 +1,5 @@
-
-import {readFile as readXLSXFile} from 'xlsx';
-import {readFile as readXLSFile} from 'xlsjs';
+import fs from 'fs';
+import csvtojson from 'csvtojson';
 
 import FileProcessor from "@/lib/processors/base/FileProcessor";
 
@@ -9,23 +8,26 @@ export default class ExcelFileProcessor extends FileProcessor {
         super({fileExtension: "csv"});
     }
 
-    async getCellValue(file, sheetName, row, column) {
-        const fileBuffer = await file.arrayBuffer();
-        let workbook;
+    async readCSVFile(file) {
+        return new Promise(async (resolve, reject) => {
+            // Check if the file has a .csv extension
+            if (!file.name.endsWith('.csv')) {
+                reject(new Error('Invalid file format. Please provide a CSV file.'));
+                return;
+            }
 
-        if (this.fileExtension === "xlsx") {
-            workbook =  await readXLSXFile(fileBuffer);
-        } else {
-            workbook = await readXLSFile(fileBuffer);
-        }
+            try {
+                // Read the CSV file
+                const buffer = await file.arrayBuffer();
+                const csvContent = Buffer.from(buffer).toString('utf-8');
 
-        if (!sheetName) {
-            sheetName = workbook.SheetNames[0]
-        }
+                // Convert CSV to JSON
+                const jsonArray = await csvtojson().fromString(csvContent);
 
-        const worksheet = workbook.Sheets[sheetName];
-        const cell = worksheet[`${column}${row}`];
-
-        return cell?.v;
+                resolve(jsonArray);
+            } catch (error) {
+                reject(error);
+            }
+        });
     }
 }

@@ -27,3 +27,19 @@ export async function identifyFile(file) {
     const config = getConfigByIdentifier(identifierFromFile);
     return {...config, fileName: file.name};
 }
+
+export async function processFile(file) {
+    const fileExtension = FileProcessor.getFileExtension(file.name)
+
+    let fileData;
+    for (let i = 0; i < PROCESSORS.length; i++) {
+        const processor = new PROCESSORS[i]();
+        if (processor.fileExtension !== fileExtension) continue;
+        fileData = await processor.process(file)
+    }
+    if (!fileData) {
+        throw new Error(`Identifier not found for file: ${file.name}`)
+    } else {
+        return fileData
+    }
+}
