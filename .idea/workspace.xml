@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bcdea02-fee0-4de6-9fdd-0294a54932cd" name="Changes" comment="Added jest config file">
+    <list default="true" id="0bcdea02-fee0-4de6-9fdd-0294a54932cd" name="Changes" comment="Added process for IsracardProcessor.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app/api/account/uploadFiles/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/api/account/uploadFiles/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/accounts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/accounts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/lib/processors/IsracardProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/processors/IsracardProcessor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/processors/MaxProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/processors/MaxProcessor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/processors/base/FileProcessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/processors/base/FileProcessor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/processors/base/FileProcessor.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/processors/base/FileProcessor.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/ynabApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/ynabApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +84,8 @@
     "JavaScript Debug.JS debug.executor": "Debug",
     "Jest.ExcelFileProcessor.executor": "Run",
     "Jest.ExcelFileProcessor.readExcelFile.should call readXLSXFile for .xlsx files.executor": "Run",
+    "Jest.getYnabAmount converts amount to YNAB format.executor": "Run",
+    "Jest.getYnabDate.executor": "Run",
     "Node.js.MaxProcessor.js.executor": "Debug",
     "Node.js.accounts.js.executor": "Debug",
     "Python.main.executor": "Run",
@@ -112,10 +121,7 @@
       <recent name="$PROJECT_DIR$/app/app/accounts/[id]" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Debug application">
-    <configuration name="rest-api | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" requestIdentifier="#1" runType="Run single request">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Jest.getYnabDate">
     <configuration name="ExcelFileProcessor" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
@@ -142,6 +148,30 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="getYnabAmount converts amount to YNAB format" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/lib/processors/base/FileProcessor.test.js" />
+      <test-names>
+        <test-name value="getYnabAmount converts amount to YNAB format" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="getYnabDate" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/app/lib/processors/base/FileProcessor.test.js" />
+      <test-names>
+        <test-name value="getYnabDate" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Debug application" type="JavascriptDebugType" uri="http://localhost:3000/" useFirstLineBreakpoints="true">
       <mapping url="http://localhost:3000" local-file="$PROJECT_DIR$/app" />
       <method v="2" />
@@ -156,31 +186,21 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/app/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="test" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="HTTP Request.rest-api | #1" />
       <item itemvalue="JavaScript Debug.Debug application" />
+      <item itemvalue="Jest.getYnabAmount converts amount to YNAB format" />
+      <item itemvalue="Jest.getYnabDate" />
       <item itemvalue="Jest.ExcelFileProcessor" />
       <item itemvalue="Jest.ExcelFileProcessor.readExcelFile.should call readXLSXFile for .xlsx files" />
       <item itemvalue="npm.dev" />
-      <item itemvalue="npm.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.getYnabDate" />
+        <item itemvalue="Jest.getYnabAmount converts amount to YNAB format" />
         <item itemvalue="npm.dev" />
         <item itemvalue="Jest.ExcelFileProcessor.readExcelFile.should call readXLSXFile for .xlsx files" />
         <item itemvalue="Jest.ExcelFileProcessor" />
-        <item itemvalue="npm.test" />
-        <item itemvalue="HTTP Request.rest-api | #1" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +229,7 @@
       <workItem from="1703694442347" duration="3054000" />
       <workItem from="1704123545715" duration="762000" />
       <workItem from="1704442262343" duration="37674000" />
-      <workItem from="1704891147271" duration="26086000" />
+      <workItem from="1704891147271" duration="37015000" />
     </task>
     <task id="LOCAL-00001" summary="Added identifier for MaxProcessor.js">
       <option name="closed" value="true" />
@@ -259,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704965737109</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added process for IsracardProcessor.js">
+      <option name="closed" value="true" />
+      <created>1704980592320</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704980592321</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +300,8 @@
     <MESSAGE value="All processors were added as identifiers" />
     <MESSAGE value="Added process for poalim and max" />
     <MESSAGE value="Added jest config file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added jest config file" />
+    <MESSAGE value="Added process for IsracardProcessor.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added process for IsracardProcessor.js" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

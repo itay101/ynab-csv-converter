@@ -12,3 +12,13 @@ export async function getAccountYnabConfigById(id) {
     return data.accounts.find(account => account.id === id)
 
 }
+
+export async function sendTransactionsToYnab(token, budgetId, transactions) {
+    return await fetch(`${BUDGETS_URL}/${budgetId}/transactions/`, {
+        method: 'POST',
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            'Content-Type': 'application/json'},
+        body: JSON.stringify({transactions})
+    })
+}

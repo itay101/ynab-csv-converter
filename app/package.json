@@ -13,6 +13,7 @@
     "csvtojson": "^2.0.10",
     "exceljs": "^4.4.0",
     "jest-mock": "^29.7.0",
+    "luxon": "^3.4.4",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",

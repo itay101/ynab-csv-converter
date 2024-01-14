@@ -1,3 +1,4 @@
+const {DateTime} = require("luxon");
 export default class FileProcessor {
     constructor({fileExtension}) {
         this.fileExtension = fileExtension
@@ -12,12 +13,14 @@ export default class FileProcessor {
     }
 
     getYnabJsonObject(date, payee_name, memo, amount, account_id) {
-        return {date, payee_name, memo, amount, account_id,
-            import_id: `YNAB:${amount}:${date}:1`, approved: false}
+        return {
+            date, payee_name, memo, amount, account_id,
+            import_id: `YNAB:${amount}:${date}:1`, approved: false, cleared: "cleared"
+        }
     }
 
     getYnabAmount(amount, isOutflow = true) {
-        amount = amount * 1000
+        amount = Math.round(amount * 1000)
         if (isOutflow) {
             amount = amount * -1;
         }
@@ -26,8 +29,8 @@ export default class FileProcessor {
     }
 
     getYnabDate(year, month, day) {
-        const date = new Date(year, month - 1, day);
-        return date.toISOString().split('T')[0]
+        const date = DateTime.fromObject({year, month, day});
+        return date.toFormat("yyyy-MM-dd");
     }
 
     static getFileExtension(filename) {

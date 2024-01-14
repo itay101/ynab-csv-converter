@@ -37,7 +37,7 @@ export default class IsracardProcessor extends ExcelFileProcessor {
         const rowObjectArray = XLSX.utils.sheet_to_row_object_array(worksheet);
         for (let rowObject in rowObjectArray) {
             const row = Object.values(rowObjectArray[rowObject]);
-            if (!this.isValidDate(row[MAIN_TABLE_COLUMN_INDEX_DATE])){
+            if (!this.isValidDate(row[MAIN_TABLE_COLUMN_INDEX_DATE])) {
                 continue
             }
             if (!isSecondaryTable && this.isMainTableRow(row)) {

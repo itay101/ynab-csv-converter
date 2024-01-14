@@ -31,7 +31,6 @@ export default class MaxProcessor extends ExcelFileProcessor {
                 if (shouldSkipRow) {
                     continue;
                 }
-
                 const [day, month, year] = row[COLUMN_INDEX_DATE].split("-")
                 try {
                     const date = this.getYnabDate(year, month, day);
@@ -44,7 +43,6 @@ export default class MaxProcessor extends ExcelFileProcessor {
                             account_id)
                     )
                 } catch {
-
                 }
             }
 
