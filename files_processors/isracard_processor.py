@@ -1,9 +1,17 @@
 import pandas
+import re
 
 import enums as enums
 from files_processors.raw_files import HeaderMapItem
 from files_processors.raw_files import RawExcelFile
 from files_processors.raw_files import YnabCsvFields
+
+VALUES_IN_FIRST_CELL_TO_SKIP = [
+    "תאריך רכישה",
+    "עסקאות בחו˝ל",
+    "דביט VISA ",
+    'אין נתונים להצגה'
+]
 
 
 class IsracardProcessor(RawExcelFile):
@@ -48,14 +56,16 @@ class IsracardProcessor(RawExcelFile):
         for sheet_name, sheet in self._raw_data.items():
             data_frame_no_na = sheet.dropna()
             for row in data_frame_no_na.values:
-                if not is_secondary_table and self._is_main_table_row(row):
-                    rows.append(self._get_main_table_row_object(row))
-                elif is_secondary_table or self._is_secondary_table(row):
-                    is_secondary_table = True
-                    if self._should_skip_row(row):
-                        continue
-                    rows.append(self._get_secondary_table_row_object(row))
-
+                try:
+                    if not is_secondary_table and self._is_main_table_row(row):
+                        rows.append(self._get_main_table_row_object(row))
+                    elif is_secondary_table or self._is_secondary_table(row):
+                        is_secondary_table = True
+                        if self._should_skip_row(row):
+                            continue
+                        rows.append(self._get_secondary_table_row_object(row))
+                except Exception as e:
+                    continue
         return rows
 
     def _is_main_table_row(self, row):
@@ -72,22 +82,27 @@ class IsracardProcessor(RawExcelFile):
             self._header_mapping[0].source: self._get_ynab_date(year, month, day),
             self._header_mapping[1].source: row[1],
             self._header_mapping[2].source: row[7],
-            self._header_mapping[3].source: self._get_ynab_amount(row[4]),
+            self._header_mapping[3].source: self._getYnabAmount(row[4]),
         }
 
     def _get_secondary_table_row_object(self, row):
-        day, month, year = self._split_date(row[1])
+        day, month, year = self._split_date(row[0])
         return {
             self._header_mapping[0].source: self._get_ynab_date(year, month, day),
             self._header_mapping[1].source: row[2],
             self._header_mapping[2].source: row[7],
-            self._header_mapping[3].source: self._get_ynab_amount(row[5]),
+            self._header_mapping[3].source: self._getYnabAmount(row[5]),
         }
 
     def _should_skip_row(self, row):
-        if not row[0] or row[0] == "תאריך רכישה" or row[0] == "עסקאות בחו˝ל":
+        if not row[0] or any(
+                self._match_value_in_first_cell_to_skip(item, row[0]) for item in VALUES_IN_FIRST_CELL_TO_SKIP):
             return True
         return False
+
+    def _match_value_in_first_cell_to_skip(self, skip_value, cell_value):
+        match = re.search(skip_value, cell_value)
+        return match
 
     def _split_date(self, value):
         return value.split("/")

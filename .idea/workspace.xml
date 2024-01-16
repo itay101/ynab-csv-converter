@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0bcdea02-fee0-4de6-9fdd-0294a54932cd" name="Changes" comment="All processors are working">
+      <change afterPath="$PROJECT_DIR$/app/lib/processors/base/ExcelFileProcessor.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="add_app" />
+                    <option name="lastUsedInstant" value="1702559657" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1702559656" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2ZXDgALXLVLjVnXutxf3PqJkuq1" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.rest-api | #1.executor": "Run",
+    "JavaScript Debug.Debug application.executor": "Debug",
+    "JavaScript Debug.JS debug.executor": "Debug",
+    "Jest.CSVFileProcessor.executor": "Run",
+    "Jest.CSVFileProcessor.readCSVFile.executor": "Run",
+    "Jest.ExcelFileProcessor.executor": "Run",
+    "Jest.ExcelFileProcessor.readExcelFile.should call readXLSXFile for .xlsx files.executor": "Run",
+    "Jest.getYnabAmount converts amount to YNAB format.executor": "Run",
+    "Jest.getYnabDate.executor": "Run",
+    "Node.js.MaxProcessor.js.executor": "Debug",
+    "Node.js.accounts.js.executor": "Debug",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "add__app",
+    "javascript.nodejs.core.library.configured.version": "21.5.0",
+    "javascript.nodejs.core.library.typings.version": "20.10.6",
+    "last_opened_file_path": "/Users/itay.roisman/code/ynab-csv-converter/app/lib/processors/base",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/Users/itay.roisman/code/ynab-csv-converter/app/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.test.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "/Applications/PyCharm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/lib/processors/base" />
+      <recent name="$PROJECT_DIR$/app/app/api/account/uploadFiles" />
+      <recent name="$PROJECT_DIR$/app/lib/processors" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/app" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/app/accounts/[id]" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Jest.CSVFileProcessor">
+    <configuration name="CSVFileProcessor" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/app/lib/processors/base/CSVFileProcessor.test.js" />
+      <test-names>
+        <test-name value="CSVFileProcessor" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="CSVFileProcessor.readCSVFile" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/app/lib/processors/base/CSVFileProcessor.test.js" />
+      <test-names>
+        <test-name value="CSVFileProcessor" />
+        <test-name value="readCSVFile" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="ExcelFileProcessor" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/app/lib/processors/base/ExcelFileProcessor.test.js" />
+      <test-names>
+        <test-name value="ExcelFileProcessor" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="getYnabAmount converts amount to YNAB format" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/lib/processors/base/FileProcessor.test.js" />
+      <test-names>
+        <test-name value="getYnabAmount converts amount to YNAB format" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="getYnabDate" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/app/lib/processors/base/FileProcessor.test.js" />
+      <test-names>
+        <test-name value="getYnabDate" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Debug application" type="JavascriptDebugType" uri="http://localhost:3000/" useFirstLineBreakpoints="true">
+      <mapping url="http://localhost:3000" local-file="$PROJECT_DIR$/app" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug application" />
+      <item itemvalue="Jest.CSVFileProcessor" />
+      <item itemvalue="Jest.CSVFileProcessor.readCSVFile" />
+      <item itemvalue="Jest.getYnabAmount converts amount to YNAB format" />
+      <item itemvalue="Jest.getYnabDate" />
+      <item itemvalue="Jest.ExcelFileProcessor" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.CSVFileProcessor" />
+        <item itemvalue="Jest.CSVFileProcessor.readCSVFile" />
+        <item itemvalue="Jest.ExcelFileProcessor" />
+        <item itemvalue="Jest.getYnabDate" />
+        <item itemvalue="Jest.getYnabAmount converts amount to YNAB format" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-67fca87a943a-c986f194a52a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11799.259" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0bcdea02-fee0-4de6-9fdd-0294a54932cd" name="Changes" comment="" />
+      <created>1702559638359</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702559638359</updated>
+      <workItem from="1702559639397" duration="779000" />
+      <workItem from="1702569695826" duration="12809000" />
+      <workItem from="1702969987201" duration="626000" />
+      <workItem from="1703075072913" duration="712000" />
+      <workItem from="1703435770084" duration="1229000" />
+      <workItem from="1703509894592" duration="598000" />
+      <workItem from="1703512310756" duration="593000" />
+      <workItem from="1703694442347" duration="3054000" />
+      <workItem from="1704123545715" duration="762000" />
+      <workItem from="1704442262343" duration="37674000" />
+      <workItem from="1704891147271" duration="39109000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added identifier for MaxProcessor.js">
+      <option name="closed" value="true" />
+      <created>1704878499129</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704878499129</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added missing files">
+      <option name="closed" value="true" />
+      <created>1704878562454</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704878562454</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added identifier for IsracardProcessor.js">
+      <option name="closed" value="true" />
+      <created>1704880588301</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704880588301</updated>
+    </task>
+    <task id="LOCAL-00004" summary="All processors were added as identifiers">
+      <option name="closed" value="true" />
+      <created>1704884749228</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704884749228</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added process for poalim and max">
+      <option name="closed" value="true" />
+      <created>1704965714864</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1704965714864</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added jest config file">
+      <option name="closed" value="true" />
+      <created>1704965737109</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704965737109</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added process for IsracardProcessor.js">
+      <option name="closed" value="true" />
+      <created>1704980592320</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704980592321</updated>
+    </task>
+    <task id="LOCAL-00008" summary="All processors are working">
+      <option name="closed" value="true" />
+      <created>1705228844812</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1705228844812</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added identifier for MaxProcessor.js" />
+    <MESSAGE value="Added missing files" />
+    <MESSAGE value="Added identifier for IsracardProcessor.js" />
+    <MESSAGE value="All processors were added as identifiers" />
+    <MESSAGE value="Added process for poalim and max" />
+    <MESSAGE value="Added jest config file" />
+    <MESSAGE value="Added process for IsracardProcessor.js" />
+    <MESSAGE value="All processors are working" />
+    <option name="LAST_COMMIT_MESSAGE" value="All processors are working" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="account_identifier_cell_value[0:4]" language="Python" />
+        <watch expression="pandas.read_excel(file.name, engine='openpyxl')" language="Python" />
+      </configuration>
+      <configuration name="NodeJSConfigurationType">
+        <watch expression="JSON.parse(jsonData)" language="JavaScript" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ynab_csv_converter$main.coverage" NAME="main Coverage Results" MODIFIED="1704623258667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
